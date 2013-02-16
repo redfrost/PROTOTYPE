@@ -1,0 +1,151 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,400italic);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
+
+/* Font-Face - Testing Only. Use Typekit instead 
+@font-face {
+font-family: 'Proxima';
+    src: url(../font/proximanova-regular-webfont.eot);
+    src: url('../font/proximanova-regular-webfont.eot?iefix') format('eot'),
+         url(../font/proximanova-regular-webfont.woff) format('woff'),
+         url(../font/proximanova-regular-webfont.ttf) format('truetype'),
+         url('../font/proximanova-regular-webfont.svg') format('svg')
+}
+@font-face {
+    font-family: 'Proxima';
+    font-style: italic;
+    src: url(../font/proximanova-regitalic-webfont.eot);
+    src: url('../font/proximanova-regitalic-webfont.eot?iefix') format('eot'),
+         url(../font/proximanova-regitalic-webfont.woff) format('woff'),
+         url(../font/proximanova-regitalic-webfont.ttf) format('truetype'),
+         url('../font/proximanova-regitalic-webfont.svg') format('svg')
+}
+@font-face {
+    font-family: 'Proxima';
+    font-weight: 300;
+    src: url(../font/proximanova-light-webfont.eot);
+    src: url('../font/proximanova-light-webfont.eot?iefix') format('eot'),
+         url(../font/proximanova-light-webfont.woff) format('woff'),
+         url(../font/proximanova-light-webfont.ttf) format('truetype'),
+         url('../font/proximanova-light-webfont.svg') format('svg')
+}
+@font-face {
+    font-family: 'Proxima';
+    font-weight: 600;
+    src: url(../font/proximanova-semibold-webfont.eot);
+    src: url('../font/proximanova-semibold-webfont.eot?iefix') format('eot'),
+         url(../font/proximanova-semibold-webfont.woff) format('woff'),
+         url(../font/proximanova-semibold-webfont.ttf) format('truetype'),
+         url('../font/proximanova-semibold-webfont.svg') format('svg')
+}
+@font-face {
+    font-family: 'Proxima';
+    font-weight: 600;
+    font-style: italic;
+    src: url(../font/proximanova-semibolditalic-webfont.eot);
+    src: url('../font/proximanova-semibolditalic-webfont.eot?iefix') format('eot'),
+         url(../font/proximanova-semibolditalic-webfont.woff) format('woff'),
+         url(../font/proximanova-semibolditalic-webfont.ttf) format('truetype'),
+         url('../font/proximanova-semibolditalic-webfont.svg') format('svg')
+}
+@font-face {
+    font-family: 'Proxima';
+    font-weight: bold;
+    src: url(../font/proximanova-bold-webfont.eot);
+    src: url('../font/proximanova-bold-webfont.eot?iefix') format('eot'),
+         url(../font/proximanova-bold-webfont.woff) format('woff'),
+         url(../font/proximanova-bold-webfont.ttf) format('truetype'),
+         url('../font/proximanova-bold-webfont.svg') format('svg')
+}
+@font-face {
+    font-family: 'Proxima';
+    font-weight: bold;
+    font-style: italic;
+    src: url(../font/proximanova-boldit-webfont.eot);
+    src: url('../font/proximanova-boldit-webfont.eot?iefix') format('eot'),
+         url(../font/proximanova-boldit-webfont.woff) format('woff'),
+         url(../font/proximanova-boldit-webfont.ttf) format('truetype'),
+         url('../font/proximanova-boldit-webfont.svg') format('svg')
+}
+@font-face {
+    font-family: 'Proxima';
+    font-weight: 900;
+    src: url(../font/proximanova-extrabold-webfont.eot);
+    src: url('../font/proximanova-extrabold-webfont.eot?iefix') format('eot'),
+         url(../font/proximanova-extrabold-webfont.woff) format('woff'),
+         url(../font/proximanova-extrabold-webfont.ttf) format('truetype'),
+         url('../font/proximanova-extrabold-webfont.svg') format('svg')
+}
+
+*/
+
+
+
+
+.navbar, .brand, h1, h2, h3, h4, h5, h6, body, p, .btn {
+  font-family: "proxima-nova", "Proxima", "Open Sans", "Helvetica Neue", "Helvetica", Arial, "Apple SD Gothic Neo", 나눔고딕, NanumGothic,'Malgun Gothic', Applegothic, sans-serif; 
+ }
+
+
+/* Font Size */
+body { font-size: 14px; font-size: 0.88rem; }
+h1 { font-size: 38px; font-size: 2.38rem; line-height:;     line-height:;        font-weight: bold; }
+h2 { font-size: 32px; font-size: 2.00rem; line-height:;     line-height:;        font-weight: bold; }
+h3 { font-size: 24px; font-size: 1.5rem;  line-height:28px; line-height:1.75rem; font-weight: bold; }
+h4 { font-size: 18px; font-size: 1.13rem; line-height:;     line-height:;        font-weight: bold; }
+h5 { font-size: 14px; font-size: 0.88rem; line-height:;     line-height:;        font-weight: normal; }
+h6 { font-size: 12px; font-size: 0.75rem; line-height:;     line-height:;        font-weight: normal; }
+p {
+    line-height: 24px; line-height: 1.5rem;
+    margin-bottom: 1.2rem;
+    vertical-align: bottom;
+    word-break: normal;
+    word-wrap: break-word;
+	text-align: ;
+}
+
+.korean p {
+    color: #333333;
+    margin: 0 0 19px;
+}
+
+.wrap a, .wrap a:hover, .wrap a:active { text-decoration: none;}
+
+blockquote p {
+    color: #999999;
+    font-size: 16px; font-size: 1rem;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 25px;
+    margin-bottom: 0;
+    padding: 20px 0;
+}
+
+
+.site-header hgroup h1 {
+    font-size: 35px; font-size: 2.6rem;
+    line-height: 1.84615;
+}
+.site-header hgroup h2 {
+    color: #777777;
+    font-size: 13px; font-size: 0.93rem;
+    font-weight: lighter;
+    font-weight: 300;
+    line-height: 1.84615;
+}
+
+
+/* Additional Font Style */
+.pen, .pen p { 
+ 	 font-family: '나눔손글씨 펜',NanumPen,NanumPenWeb,"Apple SD Gothic Neo",'Malgun Gothic'!important;
+ 	 }
+
+.brush, .brush p { 
+ 	 font-family: '나눔손글씨 붓',NanumBrush,NanumBrushWeb,"Apple SD Gothic Neo",'Malgun Gothic'!important;
+ 	 }
+
+.book, .book p { 
+     font-family: 나눔명조,NanumMyeongjo,NanumMyeongjoWeb,Georgia,"Apple SD Gothic Neo",'Malgun Gothic'!important; 
+     }
+
+
+

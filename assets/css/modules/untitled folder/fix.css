@@ -1,0 +1,46 @@
+/* =============================================================================
+   FIX
+   ============================================================================= */
+
+/* LAYOUT FIX */
+.row-fluid .row { margin-left: 0px; }
+.thumbnails { margin-left: 0; } /* Thumbnails box margin left fix */
+
+@media (max-width: 1024px) {
+.thumbnails { margin-left: -20px; } 
+}
+
+#wrap .navbar-inner .container { width: 100% !important; } /* Nav bar inside content overflow fix */
+
+.span12. iframe, .span12. object, .span12. embed {
+width: 100%;
+min-height: 566px;
+}
+
+/* Media Player */
+.mejs-container { margin: auto;}
+
+/* Bootstrap Fix Lines on Button (Retina) */
+.btn:hover { background-position: 0 -40px; }
+
+/* NAV IE Fix */
+.dropdown-menu .active > a, .dropdown-menu .active > a:hover { color: #fff\0/ !important; }
+
+/* Recent post plugin no-image thumbnail fix */
+.srp-widget-thmb { max-width: 50px !important; } 
+div.srp-widget-container {
+    clear: both;
+    display: table;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
