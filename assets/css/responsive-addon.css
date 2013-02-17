@@ -72,6 +72,11 @@
 
 /* CONTENT */
 @media (min-width: 980px) {
+
+    body {
+        margin: auto;
+        }
+
 	.main.span8, .main.span9 {
 	    border-right: 1px dotted #CCCCCC;
 	    padding-right: 24px !important;    		/* 20 for 960, 24 for 960content, 30 for 978 */
@@ -211,7 +216,7 @@
 
 
 /* CAROUSEL */
-@media (min-width: 1025px){ 
+@media (min-width: 1023px){ 
 .banner #myCarousel-auto .page_banner_textbox, 
 .banner #myCarousel .page_banner_textbox { background: rgba(47,51,55, 0.9); }
 }
@@ -282,12 +287,17 @@
 
 
 /* LAYOUT FIX */
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
 .thumbnails { margin-left: -20px; } 
 }
 
-
-
+/* LAYOUT FIX */
+@media (min-width: 1024px) {
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+    }
+}
 
 /* Responsive Video	*/
 iframe, object, embed {

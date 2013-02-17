@@ -10,17 +10,16 @@ add_theme_support('h5bp-htaccess');         // Enable HTML5 Boilerplate's .htacc
 add_theme_support('bootstrap-gallery');     // Enable Bootstrap's thumbnails component on [gallery]
 add_theme_support('nice-search');           // Enable /?s= to /search/ redirect
 add_theme_support('bootstrap-responsive'); // On/Off Responsive Mobile view
-add_theme_support('bootstrap-responsive-max'); //Responsive Large Desktop view
 add_theme_support('bootstrap-test'); // On/Off Test mode
 
 
 /**
  * Configuration values
  */
+define('WIDTH_VALUE', '960'); // RESPONSIVE LAYOUT MAX WIDTH VALUE 
 define('GOOGLE_ANALYTICS_ID', ''); // UA-XXXXX-Y
 define('TYPEKIT_ID', 'mng3caa'); // ADOBE TYPEKIT ID
 define('POST_EXCERPT_LENGTH', 40);
-
 
 
 /**
@@ -50,7 +49,7 @@ function roots_sidebar_class() {
  * Responsive-Max Class change
  */
 function roots_container_class() {
-  if (current_theme_supports('bootstrap-responsive-max')) {
+  if (current_theme_supports('bootstrap-responsive')) {
     $class = 'container-fluid';
   } else {
     $class = 'container';
@@ -58,13 +57,14 @@ function roots_container_class() {
   return $class;
 }
 function roots_row_class() {
-  if (current_theme_supports('bootstrap-responsive-max')) {
+  if (current_theme_supports('bootstrap-responsive')) {
     $class = 'row-fluid';
   } else {
     $class = 'row';
   }
   return $class;
 }
+
 
 /**
  * Define which pages shouldn't have the sidebar

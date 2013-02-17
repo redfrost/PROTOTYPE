@@ -141,12 +141,9 @@ html {
   background-attachment:;
   } 
 
-body {  padding-top: 0px; }
-/* body.static {  
-	padding-top: ; 
-	min-width: 980px; 
-	}
-Set this to fix div bg-cutoff issue */
+body { padding-top: 0px; margin: auto; }
+body.static { min-width: 980px; }
+/* Set this to fix div bg-cutoff issue */
 
 @media (min-width: 1025px) {  /* must set to min 1025 to fix layout in iPad 1024 resolution */
 body { 

@@ -1,6 +1,11 @@
 <?php get_template_part('templates/head'); ?>
-<body <?php body_class(); ?> data-spy=""><!-- Scroll Spy disabled -->
 
+<?php if (current_theme_supports('bootstrap-responsive')) { ?>   
+<body <?php body_class(); ?> style="max-width:<?php echo WIDTH_VALUE; ?>px;" data-spy="">
+<? } else { ?>
+<body <?php body_class(); ?> data-spy="">
+<?php } ?>
+  
   <!--[if lt IE 9]><div class="alert">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</div><![endif]-->
 
   <?php
