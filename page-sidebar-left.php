@@ -5,19 +5,31 @@ Template Name: Sidebar Left
 ?>
 
 <style type="text/css">
-@media (min-width: 768px){
+
+@media (min-width: 980px) {
 .main.span8, .main.span9 {
-    border-left: 1px dotted #CCCCCC;
+    border-left: 1px dotted #CCCCCC !important;
     border-right: 0 none;
     padding-left: 19px !important;
-    padding-right: 0 !important;
+    float: left; 
+    }    
+    .page-template-page-sidebar-left-php .sidebar section { padding-right: 24px; }
 }
 
-/* Sidebar Left */
-.page-template-page-sidebar-left-php .sidebar, .float-left  { float:left; padding-left: 0px; }
-.page-template-page-sidebar-left-php .main,    .float-right { float:right; }
+@media (min-width: 768px){
+.main.span8, .main.span9 { border-left: 0px; }
 
+.page-template-page-sidebar-left-php .sidebar,
+.float-left  { 
+    float: left; 
+    margin-left: 0px; 
+    padding-left: 0px; 
 }
+
+.page-template-page-sidebar-left-php .sidebar section { padding-left: 0px; }
+.page-template-page-sidebar-left-php .main, .float-right { float:right; }
+}
+
 </style>
 
 

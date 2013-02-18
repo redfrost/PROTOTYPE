@@ -1,7 +1,7 @@
 <?php get_template_part('templates/head'); ?>
   
 <!-- Main banner Carousel -->  
-<?php get_template_part('templates/section', 'news-recentpost'); ?>
+<?php get_template_part('templates/section', 'news-carousel'); ?>
 
 <div class="wrap <?php echo roots_container_class(); ?> whats-on" role="document">
 
@@ -13,16 +13,7 @@
       }?>
     </div> 
 
-    <div class="page-header">
-        <h1>
-        <?php
-        if($post->post_parent) {
-        $parent_title = get_the_title($post->post_parent);
-        echo $parent_title.' &#8212; ';
-        } ?>
-        <?php wp_title(''); ?>
-        </h1>
-    </div>
+    <?php get_template_part('templates/page', 'header'); ?>
       
     <!-- Content -->  
     <div class="content <?php echo roots_row_class(); ?>">

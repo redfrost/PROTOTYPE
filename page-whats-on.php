@@ -1,5 +1,5 @@
 <?php
 /*
-Template Name: What's On Carousel
+Template Name: What's On
 */
 ?>

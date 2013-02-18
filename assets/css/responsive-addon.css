@@ -71,28 +71,6 @@
 
 
 /* CONTENT */
-@media (min-width: 980px) {
-
-    body {
-        margin: auto;
-        }
-
-	.main.span8, .main.span9 {
-	    border-right: 1px dotted #CCCCCC;
-	    padding-right: 24px !important;    		/* 20 for 960, 24 for 960content, 30 for 978 */
-		}
-	.sidebar section { padding-left: 24px; }	/* 20 for 960, 24 for 960content, 30 for 978 */
-}
-
-
-@media (min-width: 768px) and (max-width: 979px) {
-.main.span8, .main.span9 {
-    border-right: 1px dotted #CCCCCC;
-    padding-right: 20px; /* This fixes responsive sidebar misalignment under 980px */
-    }
-    .sidebar section { padding-left: 20px; }
-}  
-
 @media (max-width: 767px) {
     	.nav-single { margin-top: 40px; }
 	}  

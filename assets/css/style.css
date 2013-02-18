@@ -439,8 +439,11 @@ h1.site-title { margin: 0 0 -5px 0; }
 
 .featured-image-box {  }
 .featured-image-box img { margin-bottom: 30px; }
-   
-   
+
+
+
+
+
    
 /* ==========================================================================
    6. FOOTER
@@ -542,11 +545,6 @@ footer section {
    ============================================================================= */
 
 /* Sidebar Global */
-
-.sidebar {
-    float: right;
-    margin-left: -1px;
-}
 .sidebar section, .threecolumn .sidebar1 section, .threecolumn .sidebar2 section { padding-top: 0px; }
 
 .widget h3, h3.srp-widget-title {
@@ -1105,6 +1103,25 @@ div.srp-widget-container {
    ============================================================================= */
 
 
+/* Main div and sidebar border */
+@media (min-width: 980px) {
+.main.span8, .main.span9 {
+    border-right: 1px dotted #CCCCCC;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;    
+    margin-right: -25px;  
+    padding-right: 24px; /* 20 for 940, 24 for 960content, 30 for 978 */
+    }
+    .sidebar {
+        float: right;
+        margin-left: -1px;
+        }
+        .sidebar section { padding-left: 24px; }
+}
+
+
+
 .home .breadcrumbs, .home .page-header { display: none; }
 
 
@@ -1122,8 +1139,12 @@ div.srp-widget-container {
 
 
 
-/* Hide Page Heading */
-.page-header { display: none; }
+/* Page Heading */
+.page-header, .page-header h1 { 
+    display: block; 
+    margin-top: 0px;
+}
+
 .span4 #searchform #s {
     margin-top: 0px;
     width: 60%;
@@ -1144,6 +1165,11 @@ div.srp-widget-container {
 .footnotes ol li { margin: 14px 0; }
 
 
+/* Responsive Video	*/
+iframe, object, embed {
+width: 100%;
+/* min-height: 427px; */
+}
 
 
 
