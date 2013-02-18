@@ -1,25 +1,5 @@
 <?php get_template_part('templates/head'); ?>
 
-<?php if (current_theme_supports('bootstrap-responsive')) { ?>   
-<body <?php body_class(); ?> style="max-width:<?php echo WIDTH_VALUE; ?>px;" data-spy="">
-<? } else { ?>
-<body <?php body_class(); ?> data-spy="">
-<?php } ?>
-  
-  <!--[if lt IE 9]><div class="alert">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</div><![endif]-->
-
-  <?php
-    do_action('get_header');
-    // Use Bootstrap's navbar if enabled in config.php
-    if (current_theme_supports('bootstrap-top-navbar')) {
-      get_template_part('templates/header-top-navbar');
-    } else {
-      get_template_part('templates/header');
-    }
-  ?>
-
-<div id="master_wrap">
-
  <!-- Featured banner on top -->
  <?php get_template_part('templates/page', 'pagebanner'); ?>
 
@@ -48,10 +28,3 @@
   </div><!-- /.wrap -->
 
   <?php get_template_part('templates/footer'); ?>
-</div><!-- /#master_wrap -->
-<!-- iPad menu fix -->
-<script type='text/javascript'>
-$('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });
-</script>
-</body>
-</html>

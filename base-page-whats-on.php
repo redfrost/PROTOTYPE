@@ -1,42 +1,7 @@
 <?php get_template_part('templates/head'); ?>
-
-<?php if (current_theme_supports('bootstrap-responsive')) { ?>   
-<body <?php body_class(); ?> style="max-width:<?php echo WIDTH_VALUE; ?>px;" data-spy="">
-<? } else { ?>
-<body <?php body_class(); ?> data-spy="">
-<?php } ?>
   
-  <!--[if lt IE 9]><div class="alert">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</div><![endif]-->
-
-  <?php
-    do_action('get_header');
-    // Use Bootstrap's navbar if enabled in config.php
-    if (current_theme_supports('bootstrap-top-navbar')) {
-      get_template_part('templates/header-top-navbar');
-    } else {
-      get_template_part('templates/header');
-    }
-  ?>
-  
-<div id="master_wrap" class="whats-on">
-
-
-  <div class="wrap <?php echo roots_container_class(); ?>" role="document">
-
-    <!-- Breadcrumb -->
-    <div class="breadcrumbs">
-      <?php if(function_exists('bcn_display'))
-      {
-          bcn_display();
-      }?>
-    </div>
-  
-
-<!-- Content -->  
-    <div class="content <?php echo roots_row_class(); ?>">
-
-
 <!-- Main banner Carousel -->  
+<div class="whats-on <?php echo roots_row_class(); ?>">
 <div class="span12 banner">
 <div id="myCarousel-auto" class="carousel carousel-fade slide page_banner_imgbox">
  <div class="carousel-inner">
@@ -91,8 +56,23 @@
   
  
 </div><!-- #myCarousel -->
-</div>
+</div><!-- /.span12 -->
+</div><!-- Main banner Carousel -->
 
+
+  <div class="wrap <?php echo roots_container_class(); ?> whats-on" role="document">
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumbs">
+      <?php if(function_exists('bcn_display'))
+      {
+          bcn_display();
+      }?>
+    </div>
+  
+
+<!-- Content -->  
+<div class="content <?php echo roots_row_class(); ?>">
 
 
 	  <!-- Main  -->
@@ -144,14 +124,3 @@
   </div><!-- /.wrap -->
 
   <?php get_template_part('templates/footer'); ?>
-</div><!-- /#master_wrap -->
-
-<!-- iPad menu fix -->
-<script type='text/javascript'>
-$('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });
-</script>
-
-</body>
-
-
-</html>
