@@ -1,7 +1,7 @@
 <?php get_template_part('templates/head'); ?>
 
 <!-- Featured banner on top -->
-<?php get_template_part('templates/section', 'pagebanner'); ?>
+<?php get_template_part('templates/page', 'pagebanner'); ?>
 
 <div class="wrap <?php echo roots_container_class(); ?>" role="document">
 
