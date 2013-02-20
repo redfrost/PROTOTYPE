@@ -1,18 +1,16 @@
 <?php get_template_part('templates/head'); ?>
-  
-<!-- Main banner Carousel -->  
-<?php get_template_part('templates/section', 'news-recentpost'); ?>
 
-<div class="wrap <?php echo roots_container_class(); ?> whats-on" role="document">
+<!-- Featured banner on top -->
+<div class="<?php echo roots_container_class(); ?>">
+<?php get_template_part('templates/section', 'news-banner'); ?>
+</div>
+
+<div class="wrap <?php echo roots_container_class(); ?>" role="document">
 
     <!-- Breadcrumb -->
-    <div class="breadcrumbs">
-      <?php if(function_exists('bcn_display'))
-      {
-          bcn_display();
-      }?>
-    </div> 
+    <?php get_template_part('templates/section', 'breadcrumb'); ?>
 
+    <!-- Parent Page Header -->
     <div class="page-header">
         <h1>
         <?php
@@ -38,6 +36,7 @@
       <?php endif; ?>
       
     </div><!-- /.content -->
+    
 </div><!-- /.wrap -->
 
 <?php get_template_part('templates/footer'); ?>

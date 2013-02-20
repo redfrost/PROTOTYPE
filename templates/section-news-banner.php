@@ -19,4 +19,4 @@
 		<?php endforeach; ?>
 
 </div><!-- /.span12 -->
-</div><!-- Main banner Carousel -->
+</div><!-- Main banner -->

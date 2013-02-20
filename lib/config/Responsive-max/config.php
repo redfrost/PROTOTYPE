@@ -18,7 +18,7 @@ add_theme_support('bootstrap-test'); // On/Off Test mode
  */
 define('WIDTH_VALUE', '960'); // RESPONSIVE LAYOUT MAX WIDTH VALUE 
 define('GOOGLE_ANALYTICS_ID', ''); // UA-XXXXX-Y
-define('TYPEKIT_ID', 'mng3caa'); // ADOBE TYPEKIT ID
+define('TYPEKIT_ID', 'wng7msj'); // ADOBE TYPEKIT ID
 define('POST_EXCERPT_LENGTH', 40);
 
 
