@@ -1,6 +1,6 @@
     <div class="content <?php echo roots_row_class(); ?>">
 
-      <div class="main <?php echo roots_main_class(); ?>" role="main">
+      <div class="main left <?php echo roots_main_class(); ?>" role="main">
         <?php include roots_template_path(); ?>
       </div><!-- /.main -->
 

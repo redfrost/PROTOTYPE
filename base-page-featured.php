@@ -28,28 +28,7 @@
     </div>
       
     <!-- Content -->  
-    <?php 
-    switch(LAYOUT_STYLE) {
-    
-      case "1" : //Content 1.DEFAULT
-        get_template_part('templates/section-base-sidebar-right');
-        break;
-    
-      case "2" : //Content 2.LEFT SIDEBAR
-        get_template_part('templates/section-base-sidebar-left');
-        break;
-    
-      case "3" : //Content 3.SINGLE COLUMN
-        get_template_part('templates/section-base-1col');
-        break;
-    
-      case "4":  //Content 4.THREE COLUMNS
-        get_template_part('templates/section-base-3col');
-        break;
-    
-        }
-    ?>
-
+    <?php get_template_part('templates/section-news-list'); ?>
  
 </div><!-- /.wrap -->
 

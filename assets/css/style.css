@@ -1174,6 +1174,45 @@ width: 100%;
 
 
 
+
+
+
+
+
+/* =============================================================================
+   TEMPLATE OPTION
+   ============================================================================= */
+
+/* Sidebar Left */
+.main.right,.sidebar.right { float: right ! important; }
+.main.left,.sidebar.left { float: left ! important; }
+
+.main.right {
+     border-left: 1px dotted #CCCCCC ! important;
+     border-right: 0px none ! important;
+     padding-left: 19px ! important;
+    }
+
+.sidebar.left {
+     margin-left: 0px !important;
+    }
+    .sidebar.left section {
+         padding-left: 0px ! important;
+         padding-right: 24px;
+    }
+
+/* Fullwidth fix */
+.main.right.span12 {
+    border: 0 none !important;
+    padding-left: 0px !important;
+}
+
+
+
+
+
+
+
 /* Postbox */
 .postbox {
     height: 200px;
