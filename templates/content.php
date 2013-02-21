@@ -7,7 +7,7 @@
 
 <?php while (have_posts()) : the_post(); ?>
 
-  <?php if (current_theme_supports('postbox')) { ?>   
+  <?php if (current_theme_supports('postbox')) { ?><!-- On/Off Postbox style -->  
   <article class="span3 postbox">
   <? } else { ?>
   <article <?php post_class(); ?>>
@@ -21,7 +21,7 @@
 			<div class="list"><h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 			<span class="updated">Date Posted: <?php the_time('j/m/y g:i A') ?></span>
 		  	<p><?php the_excerpt(); ?></p>
-		  	<a class="btn btn-mini" href="<?php the_permalink(); ?>">&raquo; Read More</a>
+		  	<!-- <a class="btn btn-mini" href="<?php the_permalink(); ?>">&raquo; Read More</a> -->
 		  	</div>
 		</div>
     <footer>

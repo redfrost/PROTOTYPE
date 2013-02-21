@@ -2,11 +2,11 @@
 
 	<?php	// Get Posts in Category except first. 
 	global $post;
-	$args = array( 'numberposts' => 2, 'offset'=> 0, 'category' => 1 );  //Post Number, Offset (Exclude post), Category number 
+	$args = array( 'numberposts' => 3, 'offset'=> 0, 'category' => 1 );  //Post Number, Offset (Exclude post), Category number 
 	$myposts = get_posts( $args );
 	foreach( $myposts as $post ) :	setup_postdata($post); ?>
 
-	<article id="post-<?php the_ID(); ?>" class="span6">
+	<article id="post-<?php the_ID(); ?>" class="span4">
 	    	
     	<header>
 		<a href="<?php the_permalink(); ?>" class="list_thumbnail"><?php the_post_thumbnail(array(150,150)); ?></a>

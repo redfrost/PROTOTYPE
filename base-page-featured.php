@@ -8,7 +8,12 @@
 <div class="wrap <?php echo roots_container_class(); ?>" role="document">
 
     <!-- Breadcrumb -->
-    <?php get_template_part('templates/section', 'breadcrumb'); ?>
+    <div class="breadcrumbs">
+      <?php if(function_exists('bcn_display'))
+      {
+          bcn_display();
+      }?>
+    </div>
 
     <!-- Parent Page Header -->
     <div class="page-header">
@@ -23,20 +28,29 @@
     </div>
       
     <!-- Content -->  
-    <div class="content <?php echo roots_row_class(); ?>">
-      <div class="main <?php echo roots_main_class(); ?>" role="main">
-      <?php get_template_part('templates/section', 'news-list'); ?>  
-      </div><!-- /.main -->
-
-      <!-- Sidebar -->      
-      <?php if (roots_display_sidebar()) : ?>
-      <aside class="sidebar <?php echo roots_sidebar_class(); ?>" role="complementary">
-        <?php include roots_sidebar_path(); ?>
-      </aside><!-- /.sidebar -->
-      <?php endif; ?>
-      
-    </div><!-- /.content -->
+    <?php 
+    switch(LAYOUT_STYLE) {
     
+      case "1" : //Content 1.DEFAULT
+        get_template_part('templates/section-base-sidebar-right');
+        break;
+    
+      case "2" : //Content 2.LEFT SIDEBAR
+        get_template_part('templates/section-base-sidebar-left');
+        break;
+    
+      case "3" : //Content 3.SINGLE COLUMN
+        get_template_part('templates/section-base-1col');
+        break;
+    
+      case "4":  //Content 4.THREE COLUMNS
+        get_template_part('templates/section-base-3col');
+        break;
+    
+        }
+    ?>
+
+ 
 </div><!-- /.wrap -->
 
 <?php get_template_part('templates/footer'); ?>

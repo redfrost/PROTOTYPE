@@ -1,5 +1,5 @@
 <?php
-// Get the video URL and put it in the $video variable
+// VIDEO in Page-banner. Use [video_url] in custom field.
 $videoID = get_post_meta($post->ID, 'video_url', true);
 // Check if there is in fact a video URL
 if ($videoID) {
@@ -9,23 +9,6 @@ if ($videoID) {
 	echo '</div>';
 }
 ?>
-
-
-<!--
-<div class="featured-image-box">
-	<div class="featured-banner">
-	<?php
-	   if (is_page()) {
-		   if (is_mobile()) {
-		   the_post_thumbnail('medium');
-		   } else {
-		   the_post_thumbnail('large');
-			}
-	} ?>
-	</div>
-</div>
--->
-
 
 
 <div class="featured-image-box">
