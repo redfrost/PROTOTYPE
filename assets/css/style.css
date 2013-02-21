@@ -1174,11 +1174,30 @@ width: 100%;
 
 
 
+/* Postbox */
+.postbox {
+    height: 200px;
+}
+.postbox p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 
+/* Evect Every 4th and 1st/5th */
+.postbox {
+     overflow: hidden;
+     padding: 0px;
+     margin-bottom: 20px;
+}
 
+.postbox:nth-of-type(4n+1) {
+     margin-left: 0px;
+}
 
-
-
+.postbox:nth-child(4n-7) {
+     margin-right: 0px;
+}
 
 
 

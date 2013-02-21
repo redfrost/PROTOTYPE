@@ -11,6 +11,8 @@ add_theme_support('bootstrap-gallery');     // Enable Bootstrap's thumbnails com
 add_theme_support('nice-search');           // Enable /?s= to /search/ redirect
 add_theme_support('bootstrap-responsive'); // On/Off Responsive Mobile view
 add_theme_support('bootstrap-test'); // On/Off Test mode
+add_theme_support('header-searchform'); // Display search form in header
+add_theme_support('postbox'); // Display list in box style (4 boxes)
 
 
 /**
@@ -95,7 +97,7 @@ function roots_display_sidebar() {
       'page-custom.php',
       'page-fullwidth.php',
       'page-featured.php',
-      'page-product.php'
+      'page-product.php',
     )
   );
 

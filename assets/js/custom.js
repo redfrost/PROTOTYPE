@@ -1,5 +1,3 @@
-/* Custom codes */
-
 // iPhone pull addressbar
 /mobile/i.test(navigator.userAgent) && !window.location.hash && setTimeout(function () {
   window.scrollTo(0, 1);
@@ -92,6 +90,7 @@ jQuery(document).ready(function(){
     });
 });
 */
+
 
 
 //Fixed Submenu

@@ -12,6 +12,7 @@ add_theme_support('nice-search');           // Enable /?s= to /search/ redirect
 //add_theme_support('bootstrap-responsive'); // On/Off Responsive Mobile view
 add_theme_support('bootstrap-test'); // On/Off Test mode
 add_theme_support('header-searchform'); // Display search form in header
+add_theme_support('postbox'); // Display list in box style (4 boxes)
 
 
 /**
@@ -19,7 +20,7 @@ add_theme_support('header-searchform'); // Display search form in header
  */
 define('WIDTH_VALUE', '960'); // RESPONSIVE LAYOUT MAX WIDTH VALUE 
 define('GOOGLE_ANALYTICS_ID', ''); // UA-XXXXX-Y
-define('TYPEKIT_ID', 'mng3caa'); // ADOBE TYPEKIT ID
+define('TYPEKIT_ID', 'wng7msj'); // ADOBE TYPEKIT ID
 define('POST_EXCERPT_LENGTH', 40);
 
 
@@ -96,7 +97,7 @@ function roots_display_sidebar() {
       'page-custom.php',
       'page-fullwidth.php',
       'page-featured.php',
-      'page-product.php'
+      'page-product.php',
     )
   );
 
