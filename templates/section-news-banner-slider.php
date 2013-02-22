@@ -1,5 +1,5 @@
-<div class="whats-on <?php echo roots_row_class(); ?>">
-<div class="span12 banner">
+<div class="banner-slider <?php echo roots_row_class(); ?>">
+<div class="span12">
 <div id="myCarousel-auto" class="carousel carousel-fade slide page_banner_imgbox">
  <div class="carousel-inner">
  
@@ -13,7 +13,16 @@
   ?>
   
    <div class="item active">
-    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large');?></a>
+       		<a href="<?php the_permalink(); ?>">
+        	<?php
+        	   if (is_page()) {
+        		   if (is_mobile()) {
+        		   the_post_thumbnail('medium');
+        		   } else {
+        		   the_post_thumbnail('large');
+        			}
+        	} ?>
+            </a>
     <div class="carousel-caption page_banner_textbox">
      <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
      <p><?php the_excerpt();?></p>
@@ -35,7 +44,16 @@
   ?>
   
    <div class="item">
-    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large');?></a>
+       		<a href="<?php the_permalink(); ?>">
+        	<?php
+        	   if (is_page()) {
+        		   if (is_mobile()) {
+        		   the_post_thumbnail('medium');
+        		   } else {
+        		   the_post_thumbnail('large');
+        			}
+        	} ?>
+            </a>
     <div class="carousel-caption page_banner_textbox">
      <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
      <p><?php the_excerpt();?></p>

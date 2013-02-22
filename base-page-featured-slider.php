@@ -4,6 +4,7 @@
 <div class="<?php echo roots_container_class(); ?>">
 <?php get_template_part('templates/section', 'news-banner-slider'); ?>
 <?php get_template_part('templates/section', 'news-listbox-carousel'); ?>
+<?php get_template_part('templates/section', 'news-listbox2'); ?>
 <?php get_template_part('templates/section', 'news-listbox3'); ?>
 <?php get_template_part('templates/section', 'news-listbox4'); ?>
 </div>

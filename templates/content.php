@@ -14,7 +14,8 @@
   <?php } ?>
       
     <header>
-	<div class="list-thumbnail-box"><a href="<?php the_permalink(); ?>" class="list-thumbnail"><?php the_post_thumbnail(array(150,150)); ?></a></div>
+	<div class="list-thumbnail-box"><a href="<?php the_permalink(); ?>" class="list-thumbnail"><?php the_post_thumbnail('thumbnail'); ?>
+</a></div>
 	</header>
 		
 		<div class="entry-content listbox">

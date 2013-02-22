@@ -35,6 +35,9 @@ a {
 a:hover {
     color: #005580;
     text-decoration: none;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE 8 */
+    filter: alpha(opacity=50); /* IE7 */
+    opacity: 0.6;
 	}
 
 	/* Remove Firefox selection dot */
@@ -197,7 +200,11 @@ body {
 /* Fast  Fade Animation */
 .brand, .animation-fast,
 .link_view, 
-.list-thumbnail img, 
+.page_banner_imgbox a,
+.newslist article a,
+.listbox a,
+.list-thumbnail, 
+.box-thumbnail,
 .page .updated, 
 .nav-single a, 
 .entry-tags a, 
@@ -215,8 +222,6 @@ body {
 	     -webkit-backface-visibility: hidden; /* Safari Flicker Fix #2 */
 	     -webkit-transform: translateZ(0);
 }
-
-
 
 
 
@@ -658,7 +663,9 @@ section.widget_links .widget-inner h3 { display:none; }
    9. LIST & TABLE
    ============================================================================= */
 
-.archive #main article.hentry {
+.archive .main article.hentry, 
+.search-results .main article.hentry,
+.newslist article.hentry {
     border-bottom: 1px solid #EEEEEE;
     display: inline-block;
     float: left;
@@ -667,7 +674,20 @@ section.widget_links .widget-inner h3 { display:none; }
     width: 100%;
 }
 
-.list_thumbnail img { float: left; margin-right: 20px; }
+.list-thumbnail {
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+    width: 150px;
+    margin-right: 20px; 
+}
+
+.list-thumbnail img { 
+    float: left; 
+    width: 100%;
+    height: auto;
+}
+
 .listbox {
     background:;
     padding-top: 0px;
@@ -677,6 +697,23 @@ section.widget_links .widget-inner h3 { display:none; }
     margin: 4px 0px 10px 0px; 
     display: block;
     color: #999;
+}
+
+.listbox-wrap, .carousel-box {
+    border-bottom: 1px dotted #DDDDDD;
+}
+
+.listbox-wrap article, .carousel-box {
+     margin: 20px 0px;
+}
+
+.listbox-wrap article img {
+     margin-bottom: 10px;
+}
+
+.listbox-wrap article .btn {
+     float: left;
+     padding: 2px 6px;
 }
 
 
@@ -908,17 +945,20 @@ border-style: inset; /* Firefox border fix */
 /* -----------------------------------------
    CAROUSEL
 ----------------------------------------- */
-.banner #myCarousel-auto .item, 
-.banner #myCarousel .item {
-	height: 560px;
+.banner-slider #myCarousel-auto .item, 
+.banner-slider #myCarousel .item {
+	height: 550px;
 	background: #000;
 }
 .carousel-caption.page_banner_textbox .link_view { float: right; margin-top: -55px; }
 
+.page_banner_textbox h2 a, .page_banner_textbox h2 a {
+    color: #eee;
+}
 
-.banner #myCarousel-auto .page_banner_textbox, 
-.banner #myCarousel .page_banner_textbox {
-	background: rgba(47,51,55, 0.9);
+.banner-slider #myCarousel-auto .page_banner_textbox, 
+.banner-slider #myCarousel .page_banner_textbox {
+	background: rgba(47,51,55, 1);
     border-top: 1px solid #555555;
     color: #EEEEEE;
     display: inline-block;
@@ -926,12 +966,13 @@ border-style: inset; /* Firefox border fix */
     margin-top: -113px;
     padding: 10px 20px 30px;
     position: absolute;
-    top: 500px;
+    top:;
 }
-
+.banner-slider #myCarousel-auto .continued, 
+.banner-slider #myCarousel .continued {
+    color: #999;
+}
 	
-
-
 
 /* Carousel Fade */
 .carousel.carousel-fade .item {
@@ -1004,7 +1045,7 @@ a.popular_posts_bars_link {
     text-decoration: none !important;
 }
 
-.popular_posts_bars { list-style: none outside none ! important; margin: 0.3em 0px ! important; padding: 0px ! important; width: 90%; }
+.popular_posts_bars { list-style: none outside none !important; margin: 0.3em 0px !important; padding: 0px !important; width: 90%; }
 
 
 
@@ -1184,20 +1225,20 @@ width: 100%;
    ============================================================================= */
 
 /* Sidebar Left */
-.main.right,.sidebar.right { float: right ! important; }
-.main.left,.sidebar.left { float: left ! important; }
+.main.right,.sidebar.right { float: right !important; }
+.main.left,.sidebar.left { float: left !important; }
 
 .main.right {
-     border-left: 1px dotted #CCCCCC ! important;
-     border-right: 0px none ! important;
-     padding-left: 19px ! important;
+     border-left: 1px dotted #CCCCCC !important;
+     border-right: 0px none !important;
+     padding-left: 19px !important;
     }
 
 .sidebar.left {
      margin-left: 0px !important;
     }
     .sidebar.left section {
-         padding-left: 0px ! important;
+         padding-left: 0px !important;
          padding-right: 24px;
     }
 

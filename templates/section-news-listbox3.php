@@ -1,4 +1,4 @@
-<div class="<?php echo roots_row_class(); ?>">
+<div class="listbox-wrap <?php echo roots_row_class(); ?>">
 
 	<?php	// Get Posts in Category except first. 
 	global $post;
@@ -9,7 +9,7 @@
 	<article id="post-<?php the_ID(); ?>" class="span4">
 	    	
     	<header>
-		<a href="<?php the_permalink(); ?>" class="list_thumbnail"><?php the_post_thumbnail(array(150,150)); ?></a>
+		<a href="<?php the_permalink(); ?>" class="box-thumbnail"><?php the_post_thumbnail('list_thumbnail'); ?></a>
 		</header>
 		
 		<div class="entry-content listbox block">
@@ -22,9 +22,10 @@
 	<?php endforeach; ?>
       
        
-   <!-- Page navigation -->
+   <!-- Page navigation 
   	<div id="post-nav">
-  	<a href="../category/news/"> » View all news</a>
+  	<a href="../category/news/"> » View All</a>
   	</div>
+  	-->
 
 </div>

@@ -9,7 +9,8 @@
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	    	
     	<header>
-		<a href="<?php the_permalink(); ?>" class="list_thumbnail"><?php the_post_thumbnail(array(150,150)); ?></a>
+		<a href="<?php the_permalink(); ?>" class="list-thumbnail"><?php the_post_thumbnail('thumbnail'); ?>
+</a>
 		</header>
 		
 		<div class="entry-content listbox">

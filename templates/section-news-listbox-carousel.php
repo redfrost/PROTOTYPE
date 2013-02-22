@@ -19,8 +19,8 @@
 
                     
               <li class="span3">
-                <div class="thumbnail">
-                  <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+                <div class="box-thumbnail">
+                  <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('list_thumbnail'); ?></a>
                 </div>
                             
                <div class="caption">

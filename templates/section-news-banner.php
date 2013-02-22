@@ -1,5 +1,5 @@
-<div class="whats-on <?php echo roots_row_class(); ?>">
-<div class="span12 banner page_banner">
+<div class="banner-static <?php echo roots_row_class(); ?>">
+<div class="span12 page_banner">
 
 		<?php	// Get First Post in Category. 
 		global $post;
@@ -8,7 +8,16 @@
 		foreach( $myposts as $post ) :	setup_postdata($post); ?>
 
        		<div class="page_banner_imgbox">
-       		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large');?></a>
+       		<a href="<?php the_permalink(); ?>">
+        	<?php
+        	   if (is_page()) {
+        		   if (is_mobile()) {
+        		   the_post_thumbnail('medium');
+        		   } else {
+        		   the_post_thumbnail('large');
+        			}
+        	} ?>
+            </a>
        		</div>  
        					
  			<div class="page_banner_textbox">
