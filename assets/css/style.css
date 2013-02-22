@@ -1208,7 +1208,11 @@ width: 100%;
 }
 
 
-
+/* 1 Column */
+.sidebar.bottom.span12, .sidebar.bottom.span12 section {
+     margin-left: 0px;
+     padding-left: 0px;
+}
 
 
 

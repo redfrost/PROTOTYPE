@@ -1,7 +1,4 @@
 <?php
-/**
- * Roots includes
- */
 require_once locate_template('/lib/utils.php');           // Utility functions
 require_once locate_template('/lib/init.php');            // Initial theme setup and constants
 require_once locate_template('/lib/sidebar.php');         // Sidebar class
@@ -15,18 +12,3 @@ require_once locate_template('/lib/htaccess.php');        // HTML5 Boilerplate .
 require_once locate_template('/lib/widgets.php');         // Sidebars and widgets
 require_once locate_template('/lib/scripts.php');         // Scripts and stylesheets
 require_once locate_template('/lib/custom.php');          // Custom functions
-
-function content_split($text, $separator = '<hr/>') {
-
-    $string = '';
-    $start = ceil(strlen($text) / 3);
-
-    $string.= substr($text,0,$start);
-    $string.= $separator;
-    $string.= substr($text,$start,$start);
-    $string.= $separator;
-    $string.= substr($text,($start*2),$start);
-
-    return $string;
-}
-
