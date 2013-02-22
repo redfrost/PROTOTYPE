@@ -11,14 +11,14 @@
       <?php 
        $the_query = new WP_Query(array(
         'category_name' => 'news', 
-        'posts_per_page' => 6 
+        'posts_per_page' => 4 
         )); 
        while ( $the_query->have_posts() ) : 
        $the_query->the_post();
       ?>  
 
                     
-              <li class="span2">
+              <li class="span3">
                 <div class="thumbnail">
                   <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
                 </div>
@@ -47,14 +47,14 @@
       <?php 
        $the_query = new WP_Query(array(
         'category_name' => 'news', 
-        'posts_per_page' => 6, 
-        'offset' => 6 
+        'posts_per_page' => 4, 
+        'offset' => 4 
         )); 
        while ( $the_query->have_posts() ) : 
        $the_query->the_post();
       ?>            
                         
-              <li class="span2">
+              <li class="span3">
                 <div class="thumbnail">
                   <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
                 </div>
@@ -82,14 +82,14 @@
        <?php 
        $the_query = new WP_Query(array(
         'category_name' => 'news', 
-        'posts_per_page' => 6, 
-        'offset' => 12 
+        'posts_per_page' => 4, 
+        'offset' => 8 
         )); 
        while ( $the_query->have_posts() ) : 
        $the_query->the_post();
       ?>              
                        
-              <li class="span2">
+              <li class="span3">
                 <div class="thumbnail">
                   <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
                 </div>
