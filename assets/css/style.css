@@ -35,6 +35,9 @@ a {
 a:hover {
     color: #005580;
     text-decoration: none;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE 8 */
+    filter: alpha(opacity=50); /* IE7 */
+    opacity: 0.6;
 	}
 
 	/* Remove Firefox selection dot */
@@ -141,12 +144,9 @@ html {
   background-attachment:;
   } 
 
-body {  padding-top: 0px; }
-/* body.static {  
-	padding-top: ; 
-	min-width: 980px; 
-	}
-Set this to fix div bg-cutoff issue */
+body { padding-top: 0px; margin: auto; }
+body.static { min-width: 980px; }
+/* Set this to fix div bg-cutoff issue */
 
 @media (min-width: 1025px) {  /* must set to min 1025 to fix layout in iPad 1024 resolution */
 body { 
@@ -200,7 +200,11 @@ body {
 /* Fast  Fade Animation */
 .brand, .animation-fast,
 .link_view, 
-.list-thumbnail img, 
+.page_banner_imgbox a,
+.newslist article a,
+.listbox a,
+.list-thumbnail, 
+.box-thumbnail,
 .page .updated, 
 .nav-single a, 
 .entry-tags a, 
@@ -218,8 +222,6 @@ body {
 	     -webkit-backface-visibility: hidden; /* Safari Flicker Fix #2 */
 	     -webkit-transform: translateZ(0);
 }
-
-
 
 
 
@@ -442,8 +444,11 @@ h1.site-title { margin: 0 0 -5px 0; }
 
 .featured-image-box {  }
 .featured-image-box img { margin-bottom: 30px; }
-   
-   
+
+
+
+
+
    
 /* ==========================================================================
    6. FOOTER
@@ -545,11 +550,6 @@ footer section {
    ============================================================================= */
 
 /* Sidebar Global */
-
-.sidebar {
-    float: right;
-    margin-left: -1px;
-}
 .sidebar section, .threecolumn .sidebar1 section, .threecolumn .sidebar2 section { padding-top: 0px; }
 
 .widget h3, h3.srp-widget-title {
@@ -663,7 +663,9 @@ section.widget_links .widget-inner h3 { display:none; }
    9. LIST & TABLE
    ============================================================================= */
 
-.archive #main article.hentry {
+.archive .main article.hentry, 
+.search-results .main article.hentry,
+.newslist article.hentry {
     border-bottom: 1px solid #EEEEEE;
     display: inline-block;
     float: left;
@@ -672,7 +674,20 @@ section.widget_links .widget-inner h3 { display:none; }
     width: 100%;
 }
 
-.list_thumbnail img { float: left; margin-right: 20px; }
+.list-thumbnail {
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+    width: 150px;
+    margin-right: 20px; 
+}
+
+.list-thumbnail img { 
+    float: left; 
+    width: 100%;
+    height: auto;
+}
+
 .listbox {
     background:;
     padding-top: 0px;
@@ -682,6 +697,23 @@ section.widget_links .widget-inner h3 { display:none; }
     margin: 4px 0px 10px 0px; 
     display: block;
     color: #999;
+}
+
+.listbox-wrap, .carousel-box {
+    border-bottom: 1px dotted #DDDDDD;
+}
+
+.listbox-wrap article, .carousel-box {
+     margin: 20px 0px;
+}
+
+.listbox-wrap article img {
+     margin-bottom: 10px;
+}
+
+.listbox-wrap article .btn {
+     float: left;
+     padding: 2px 6px;
 }
 
 
@@ -913,17 +945,20 @@ border-style: inset; /* Firefox border fix */
 /* -----------------------------------------
    CAROUSEL
 ----------------------------------------- */
-.banner #myCarousel-auto .item, 
-.banner #myCarousel .item {
-	height: 560px;
+.banner-slider #myCarousel-auto .item, 
+.banner-slider #myCarousel .item {
+	height: 550px;
 	background: #000;
 }
 .carousel-caption.page_banner_textbox .link_view { float: right; margin-top: -55px; }
 
+.page_banner_textbox h2 a, .page_banner_textbox h2 a {
+    color: #eee;
+}
 
-.banner #myCarousel-auto .page_banner_textbox, 
-.banner #myCarousel .page_banner_textbox {
-	background: rgba(47,51,55, 0.9);
+.banner-slider #myCarousel-auto .page_banner_textbox, 
+.banner-slider #myCarousel .page_banner_textbox {
+	background: rgba(47,51,55, 1);
     border-top: 1px solid #555555;
     color: #EEEEEE;
     display: inline-block;
@@ -931,12 +966,13 @@ border-style: inset; /* Firefox border fix */
     margin-top: -113px;
     padding: 10px 20px 30px;
     position: absolute;
-    top: 500px;
+    top:;
 }
-
+.banner-slider #myCarousel-auto .continued, 
+.banner-slider #myCarousel .continued {
+    color: #999;
+}
 	
-
-
 
 /* Carousel Fade */
 .carousel.carousel-fade .item {
@@ -1009,7 +1045,7 @@ a.popular_posts_bars_link {
     text-decoration: none !important;
 }
 
-.popular_posts_bars { list-style: none outside none ! important; margin: 0.3em 0px ! important; padding: 0px ! important; width: 90%; }
+.popular_posts_bars { list-style: none outside none !important; margin: 0.3em 0px !important; padding: 0px !important; width: 90%; }
 
 
 
@@ -1108,6 +1144,25 @@ div.srp-widget-container {
    ============================================================================= */
 
 
+/* Main div and sidebar border */
+@media (min-width: 980px) {
+.main.span8, .main.span9 {
+    border-right: 1px dotted #CCCCCC;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;    
+    margin-right: -25px;  
+    padding-right: 24px; /* 20 for 940, 24 for 960content, 30 for 978 */
+    }
+    .sidebar {
+        float: right;
+        margin-left: -1px;
+        }
+        .sidebar section { padding-left: 24px; }
+}
+
+
+
 .home .breadcrumbs, .home .page-header { display: none; }
 
 
@@ -1125,8 +1180,12 @@ div.srp-widget-container {
 
 
 
-/* Hide Page Heading */
-.page-header { display: none; }
+/* Page Heading */
+.page-header, .page-header h1 { 
+    display: block; 
+    margin-top: 0px;
+}
+
 .span4 #searchform #s {
     margin-top: 0px;
     width: 60%;
@@ -1147,6 +1206,11 @@ div.srp-widget-container {
 .footnotes ol li { margin: 14px 0; }
 
 
+/* Responsive Video	*/
+iframe, object, embed {
+width: 100%;
+/* min-height: 427px; */
+}
 
 
 
@@ -1156,6 +1220,68 @@ div.srp-widget-container {
 
 
 
+/* =============================================================================
+   TEMPLATE OPTION
+   ============================================================================= */
+
+/* Sidebar Left */
+.main.right,.sidebar.right { float: right !important; }
+.main.left,.sidebar.left { float: left !important; }
+
+.main.right {
+     border-left: 1px dotted #CCCCCC !important;
+     border-right: 0px none !important;
+     padding-left: 19px !important;
+    }
+
+.sidebar.left {
+     margin-left: 0px !important;
+    }
+    .sidebar.left section {
+         padding-left: 0px !important;
+         padding-right: 24px;
+    }
+
+/* Fullwidth fix */
+.main.right.span12 {
+    border: 0 none !important;
+    padding-left: 0px !important;
+}
+
+
+/* 1 Column */
+.sidebar.bottom.span12, .sidebar.bottom.span12 section {
+     margin-left: 0px;
+     padding-left: 0px;
+}
+
+
+
+
+/* Postbox */
+.postbox {
+    height: 200px;
+}
+.postbox p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Evect Every 4th and 1st/5th */
+.postbox {
+     overflow: hidden;
+     padding: 0px;
+     margin-bottom: 20px;
+}
+
+.postbox:nth-of-type(4n+1) {
+     margin-left: 0px;
+}
+
+.postbox:nth-child(4n-7) {
+     margin-right: 0px;
+}
 
 
 

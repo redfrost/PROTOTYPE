@@ -8,7 +8,13 @@
           wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav nav-pills nav-hover'));
         endif;
       ?>
-      <?php get_search_form(); ?>
+        
+    <?php
+        if ( current_theme_supports('header-searchform')) {
+        get_search_form();
+        } else {    }
+    ?>  
+        
     </nav>
   </div>
 </header>
