@@ -7,6 +7,9 @@
 	@media (max-width: 768px) {
     	 body { overflow-x: hidden; } /* Width fit fix in Mobile view */ 
     	 .main [class*="span"] { margin-bottom: 30px; } /* Grid margins in Mobile view */
+    	 .listbox-wrap article {
+            margin-bottom: 60px !important;
+         }
     }
 
 
@@ -71,30 +74,13 @@
 
 
 /* CONTENT */
-@media (min-width: 980px) {
-	.main.span8, .main.span9 {
-	    border-right: 1px dotted #CCCCCC;
-	    padding-right: 24px !important;    		/* 20 for 960, 24 for 960content, 30 for 978 */
-		}
-	.sidebar section { padding-left: 24px; }	/* 20 for 960, 24 for 960content, 30 for 978 */
-}
-
-
-@media (min-width: 768px) and (max-width: 979px) {
-.main.span8, .main.span9 {
-    border-right: 1px dotted #CCCCCC;
-    padding-right: 20px; /* This fixes responsive sidebar misalignment under 980px */
-    }
-    .sidebar section { padding-left: 20px; }
-}  
-
 @media (max-width: 767px) {
     	.nav-single { margin-top: 40px; }
 	}  
 
 
 
-/* Gallery Thumbnail */  
+/* Gallery Thumbnail, List Thumbnail */  
 @media (max-width: 767px) {
     .thumbnails.gallery > li {
         width: 157px !important;
@@ -103,6 +89,9 @@
 @media (max-width: 479px) {
     .thumbnails.gallery > li {
         width: 124px !important;
+    }
+    .list-thumbnail {
+        width: 100px !important;
     }
 }  
 
@@ -211,83 +200,115 @@
 
 
 /* CAROUSEL */
-@media (min-width: 1025px){ 
-.banner #myCarousel-auto .page_banner_textbox, 
-.banner #myCarousel .page_banner_textbox { background: rgba(47,51,55, 0.9); }
+@media (min-width: 1023px){ 
+.banner-slider #myCarousel-auto .page_banner_textbox, 
+.banner-slider #myCarousel .page_banner_textbox { background: rgba(47,51,55, 1); }
 }
 
 	@media (max-width: 979px){ 
-		.banner #myCarousel-auto .page_banner_textbox, 
-		.banner #myCarousel .page_banner_textbox {
-		top: 430px;
+		.banner-slider #myCarousel-auto .page_banner_textbox, 
+		.banner-slider #myCarousel .page_banner_textbox {
+		top:;
 		}
-		.banner #myCarousel-auto .page_banner_imgbox, 
-		.banner #myCarousel .page_banner_imgbox {
-	    max-height: 490px;
+		.banner-slider #myCarousel-auto .page_banner_imgbox, 
+		.banner-slider #myCarousel .page_banner_imgbox {
+	    max-height: 490px !important;
 		}			
-		.banner #myCarousel-auto .item, 
-		.banner #myCarousel .item {
-		height: 490px;
+		.banner-slider #myCarousel-auto .item, 
+		.banner-slider #myCarousel .item {
+		height: 490px !important;
 		}
 
 	}
 	
 	@media (max-width: 767px){ 
-		.banner #myCarousel-auto .page_banner_textbox, 
-		.banner #myCarousel .page_banner_textbox {
-		top: 340px;
+    	.banner-slider #myCarousel-auto, .banner-slider #myCarousel {
+        margin-left: -20px;
+        margin-right: -20px;
+        }
+		.banner-slider #myCarousel-auto .page_banner_textbox, 
+		.banner-slider #myCarousel .page_banner_textbox {
+		top:;
 		}
-		.banner #myCarousel-auto .page_banner_imgbox, 
-		.banner #myCarousel .page_banner_imgbox {
-	    max-height: 400px;
+		.banner-slider #myCarousel-auto .page_banner_imgbox, 
+		.banner-slider #myCarousel .page_banner_imgbox {
+	    max-height: 400px !important;
 		}	
-		.banner #myCarousel-auto .item, 
-		.banner #myCarousel .item {
-		height: 400px;
-		}
-		
+		.banner-slider #myCarousel-auto .item, 
+		.banner-slider #myCarousel .item {
+		height: 400px !important;
+		}		
 	}
 	@media (max-width: 479px){ 
-		.banner #myCarousel-auto .page_banner_textbox, 
-		.banner #myCarousel .page_banner_textbox {
-	    top: 260px;
+		.banner-slider #myCarousel-auto .page_banner_textbox, 
+		.banner-slider #myCarousel .page_banner_textbox {
+	    background: rgba(47,51,55, 0.9) !important;
+	    height: auto !important;
 		}
-		.banner #myCarousel-auto .page_banner_imgbox, 
-		.banner #myCarousel .page_banner_imgbox {
-	    max-height: 360px;
+		.page_banner_textbox h2 a, .page_banner_textbox h2 a {
+        font-size: 1.5rem;
+        }
+		.banner-slider #myCarousel-auto a img, 
+		.banner-slider #myCarousel a img {
+         max-width: 200%;
+         margin-left: -50%;
+		}
+		.banner-slider #myCarousel-auto .page_banner_textbox p, 
+		.banner-slider #myCarousel .page_banner_textbox p {
+	    display: none;
 		}	
-		.banner #myCarousel-auto .item, 
-		.banner #myCarousel .item {
-		height: 320px;
+		.banner-slider #myCarousel-auto .item, 
+		.banner-slider #myCarousel .item {
+		height: 320px !important;
 		}
 		.carousel-control {
-		margin-top: -100px !important;	
 		}
 		.carousel-caption.page_banner_textbox .link_view {
 		display: none;	
 		}
 	}	
-	
+	@media (max-width: 319px){ 
+		.banner-slider #myCarousel-auto .page_banner_textbox, 
+		.banner-slider #myCarousel .page_banner_textbox {
+	    background: rgba(47,51,55, 1) !important;
+		}
+		.banner-slider #myCarousel-auto .page_banner_imgbox, 
+		.banner-slider #myCarousel .page_banner_imgbox {
+	    max-height: 280px !important;
+		}	
+		.banner-slider #myCarousel-auto .item, 
+		.banner-slider #myCarousel .item {
+		height: 280px !important;
+		}
+		.carousel-caption.page_banner_textbox .link_view {
+		display: none;	
+		}
+	}		
 
 
 /* Popular post */
 @media (min-width: 1050px) {
 .popular_posts_bars {
-     list-style: none outside none ! important;
-     margin: 0.3em 0px ! important;
-     padding: 0px ! important;
+     list-style: none outside none !important;
+     margin: 0.3em 0px !important;
+     padding: 0px !important;
      width: 100%;
     }
 }
 
 
 /* LAYOUT FIX */
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
 .thumbnails { margin-left: -20px; } 
 }
 
-
-
+/* LAYOUT FIX */
+@media (min-width: 1024px) {
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+    }
+}
 
 /* Responsive Video	*/
 iframe, object, embed {

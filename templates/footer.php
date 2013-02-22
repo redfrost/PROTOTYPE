@@ -21,3 +21,13 @@
 <div class="bg"></div>
 
 <?php wp_footer(); ?>
+
+
+</div><!-- /#master_wrap -->
+
+<!-- iPad menu fix -->
+<script type='text/javascript'>
+$('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });
+</script>
+</body>
+</html>
