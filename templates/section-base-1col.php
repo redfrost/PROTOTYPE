@@ -4,6 +4,8 @@
         <?php include roots_template_path(); ?>
       </div><!-- /.main -->
 
+      <p>&nbsp;</p>
+
       <!-- Sidebar -->      
       <?php if (roots_display_sidebar()) : ?>
       <aside class="sidebar bottom span12" role="complementary">

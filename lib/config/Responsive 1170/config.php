@@ -5,22 +5,20 @@
  */
 //add_theme_support('root-relative-urls');    // Enable relative URLs
 //add_theme_support('rewrites');              // Enable URL rewrites
-add_theme_support('h5bp-htaccess');         // Enable HTML5 Boilerplate's .htaccess
+//add_theme_support('h5bp-htaccess');         // Enable HTML5 Boilerplate's .htaccess
 //add_theme_support('bootstrap-top-navbar');  // Enable Bootstrap's top navbar
-add_theme_support('bootstrap-gallery');     // Enable Bootstrap's thumbnails component on [gallery]
-add_theme_support('nice-search');           // Enable /?s= to /search/ redirect
+//add_theme_support('bootstrap-gallery');     // Enable Bootstrap's thumbnails component on [gallery]
+//add_theme_support('nice-search');           // Enable /?s= to /search/ redirect
 add_theme_support('bootstrap-responsive'); // On/Off Responsive Mobile view
 add_theme_support('bootstrap-test'); // On/Off Test mode
 add_theme_support('header-searchform'); // Display search form in header
 //add_theme_support('postbox'); // Display list in box style (4 boxes)
-//add_theme_support('child-url'); // Child theme support
 
 
 /**
  * Configuration values
  */
-define('WIDTH_VALUE', '960'); // RESPONSIVE LAYOUT MAX CONTENT WIDTH VALUE 
-define('STATIC_WIDTH_VALUE', '1050'); // STATIC LAYOUT MAX WIDTH VALUE FOR MOBILE (default = 1024)
+define('WIDTH_VALUE', '1170'); // RESPONSIVE LAYOUT MAX WIDTH VALUE 
 define('GOOGLE_ANALYTICS_ID', ''); // UA-XXXXX-Y
 define('TYPEKIT_ID', 'wng7msj'); // ADOBE TYPEKIT ID
 define('POST_EXCERPT_LENGTH', 40);
@@ -30,13 +28,6 @@ define('LAYOUT_STYLE', 1);
 // 2.LEFT SIDEBAR 
 // 3.SINGLE COLUMN 
 // 4.THREE COLUMNS
-
-
-//Header Information
-define('SITE_DESC', 'Wordpress base template');  // Website description 
-define('SITE_AUTHOR', 'Redfrost');  // Site owner
-define('SITE_PUBLISHER', 'Massivesound');  // Site developer or publisher
-define('SITE_KEYWORDS', 'wordpress');  //Search keywords
 
 
 
@@ -114,7 +105,7 @@ function roots_display_sidebar() {
       'page-fullwidth.php',
       'page-featured.php',
       'page-product.php',
-      'post-fullwidth.php'      
+      'post-fullwidth.php'
     )
   );
 
@@ -129,8 +120,3 @@ function roots_display_sidebar() {
  * Default: 940px is the default Bootstrap container width.
  */
 if (!isset($content_width)) { $content_width = 960; }
-
-
-
-
-

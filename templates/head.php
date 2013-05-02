@@ -14,20 +14,28 @@ When you look into an abyss, the abyss also looks into you.
 
 <!-- Site info -->  
   <title><?php wp_title('|', true, 'right'); bloginfo('name'); ?></title>
-	<meta name="description" content="" />
-	<meta name="author" content="">
-	<meta name="publisher" content=""/>
-	<meta name="keywords" content="">
+    <meta name="description" content="<?php echo SITE_DESC; ?>">
+    <meta name="author" content="<?php echo SITE_AUTHOR; ?>">
+    <meta name="publisher" content="<?php echo SITE_PUBLISHER; ?>"/>
+    <meta name="keywords" content="<?php echo SITE_KEYWORDS; ?>">  
+
 
 <!-- Favicon & Touch icon -->
+  <?php if (current_theme_supports('child-url')) { ?>  
+	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/favicon.ico">
+	<link rel="apple-touch-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/apple-touch-icon.png"><!-- Gloss -->
+	<link rel="apple-touch-icon-precomposed" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/apple-touch-icon.png"><!-- Matt -->
+  <? } else { ?>
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon.ico">
 	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/assets/img/apple-touch-icon.png"><!-- Gloss -->
-	<link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/assets/img/apple-touch-icon.png"><!-- Matt -->
+	<link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/assets/img/apple-touch-icon.png"><!-- Matt -->  
+  <?php } ?>
+
 
 <!-- For Mobile View Responsive On/Off -->
   <?php if (current_theme_supports('bootstrap-responsive')) { ?>   
   <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <? } else { ?><meta name="viewport" content="width=1025" />  
+  <? } else { ?><meta name="viewport" content="width=<?php echo STATIC_WIDTH_VALUE; ?>" />  
   <?php } ?>
   
 <!-- Font -->
@@ -40,7 +48,6 @@ When you look into an abyss, the abyss also looks into you.
 
   <link rel="alternate" type="application/rss+xml" title="<?php echo get_bloginfo('name'); ?> Feed" href="<?php echo home_url(); ?>/feed/">
 </head>
-
 
 
 <?php if (current_theme_supports('bootstrap-responsive')) { ?>   

@@ -72,7 +72,8 @@ img { max-width: 100%; height:auto; -ms-interpolation-mode: bicubic; }
 /* Text Style */
 .text-left   { text-align: left; }
 .text-right  { text-align: right; }
-.text-center { text-align: center; }
+.text-center, .text-centre { text-align: center; }
+.light { font-weight: 300; }
 .lighter   { font-weight: 100; }
 .highlight   { background: #ff0; }
 .grey  { color: #969696; }
@@ -704,7 +705,7 @@ section.widget_links .widget-inner h3 { display:none; }
 }
 
 .listbox-wrap article, .carousel-box {
-     margin: 20px 0px;
+     margin-top: 20px; margin-bottom: 20px;
 }
 
 .listbox-wrap article img {
@@ -945,6 +946,11 @@ border-style: inset; /* Firefox border fix */
 /* -----------------------------------------
    CAROUSEL
 ----------------------------------------- */
+.carousel-control {
+    border: 0;
+    background: none;
+}
+
 .banner-slider #myCarousel-auto .item, 
 .banner-slider #myCarousel .item {
 	height: 550px;
@@ -1096,7 +1102,7 @@ html { filter: expression(document.execCommand("BackgroundImageCache", false, tr
 
 /* LAYOUT FIX */
 .row-fluid .row { margin-left: 0px; }
-.thumbnails { margin-left: 0; } /* Thumbnails box margin left fix */
+.thumbnails { margin-left: ; } /* Thumbnails box margin left fix */
 
 @media (max-width: 1024px) {
 .thumbnails { margin-left: -20px; } 
@@ -1213,7 +1219,23 @@ width: 100%;
 }
 
 
+/* Zoom */
+.zoom {  
+-webkit-transform: scale(1.15);
+   -moz-transform: scale(1.15);
+    -ms-transform: scale(1.15);
+     -o-transform: scale(1.15);        
+        transform: scale(1.15);
+     -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=1.15, M12=0, M21=0, M22=1.15, SizingMethod='auto expand')";
 
+   /* IE6 and 7 */ 
+   filter: progid:DXImageTransform.Microsoft.Matrix(
+            M11=1.15,
+            M12=0,
+            M21=0,
+            M22=1.15,
+        SizingMethod='auto expand');
+}
 
 
 
