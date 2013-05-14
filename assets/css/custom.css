@@ -1,1 +1,97 @@
 /* Custom CSS */
+
+a:hover, a:focus {
+    text-decoration: none;
+}
+p {
+color: #464646;
+}
+
+/* Background */
+
+@media (min-width: 1024px) {
+	html {
+    background: #444;
+	}
+	body {
+    background: #FFFFFF;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    margin: 0 auto 80px;
+    max-width: 62.5em;
+    padding: 1px 34px 0 !important;
+	}
+}
+
+
+/* Typography */
+.navbar, .brand, h1, h2, h3, h4, h5, h6, body, p, .btn {
+    font-family: "myriad-pro", 'Open Sans', Arial,"Apple SD Gothic Neo",나눔고딕,NanumGothic,'Malgun Gothic',Applegothic,sans-serif;
+}
+
+
+/* Link Style */
+a { color: #444; }
+.btn { 
+    border-radius: 0px !important; 
+    background: #333 !important;
+    color: #fff !important;
+    border: 1px solid #333 !important;
+}
+
+a:hover {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE 8 */
+	filter: alpha(opacity=50); /* IE7 */
+	opacity: 0.8;
+}
+
+
+
+/* Nav Style */
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color: #F1F1F1;
+    border-bottom: 0 solid #999999;
+    border-radius: 0 0 0 0;
+}
+
+.nav-pills > .active > a, .nav-pills > .active > a:hover, .nav-pills > .active > a:focus {
+    background-color: transparent;
+    border-bottom: 8px solid #666;
+    border-radius: 0 0 0 0;
+    color: #888;
+}
+
+.nav-pills .dropdown-menu {
+    border-radius: 0 0 0 0;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-submenu:hover > a, .dropdown-submenu:focus > a {
+    background-color: #333333 !important;
+    background-image: none;
+    background-repeat: repeat-x;
+    color: #FFFFFF !important;
+    text-decoration: none;
+}
+
+
+@media (min-width: 980px) {
+.footer-info {
+    background: #EEEEEE;
+    margin: 40px -34px 0;
+    padding: 0 34px;
+  	color: #999 !important;
+	}
+}
+
+
+.content-info {
+    padding-bottom: 0px !important;
+}
+
+.footer-info a {
+    color: #666 !important;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* listbox carousel caption */
+.caption p, .caption .continued, .listbox.block p, .listbox .continued { display: none; }

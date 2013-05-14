@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Clean up wp_head()
  *
@@ -43,7 +42,6 @@ function roots_rel_canonical() {
   $link = get_permalink($id);
   echo "\t<link rel=\"canonical\" href=\"$link\">\n";
 }
-
 add_action('init', 'roots_head_cleanup');
 
 /**
@@ -80,8 +78,21 @@ function roots_language_attributes() {
 
   return $output;
 }
-
 add_filter('language_attributes', 'roots_language_attributes');
+
+/**
+ * Manage output of wp_title()
+ */
+function roots_wp_title($title) {
+  if (is_feed()) {
+    return $title;
+  }
+
+  $title .= get_bloginfo('name');
+
+  return $title;
+}
+add_filter('wp_title', 'roots_wp_title', 10);
 
 /**
  * Clean up output of stylesheet <link> tags
@@ -92,7 +103,6 @@ function roots_clean_style_tag($input) {
   $media = $matches[3][0] === 'print' ? ' media="print"' : '';
   return '<link rel="stylesheet" href="' . $matches[2][0] . '"' . $media . '>' . "\n";
 }
-
 add_filter('style_loader_tag', 'roots_clean_style_tag');
 
 /**
@@ -129,7 +139,6 @@ function roots_body_class($classes) {
 
   return $classes;
 }
-
 add_filter('body_class', 'roots_body_class');
 
 /**
@@ -144,49 +153,26 @@ add_filter('body_class', 'roots_body_class');
  * @author Scott Walkinshaw <scott.walkinshaw@gmail.com>
  */
 function roots_root_relative_url($input) {
-  // fix for site_url != home_url()
-  if(!is_admin() && site_url() != home_url() && stristr($input, 'wp-includes') === false) {
-  	$input = str_replace(site_url(), "", $input);
-  }
-    $output = preg_replace_callback(
-    '!(https?://[^/|"]+)([^"]+)?!',
-    create_function(
-      '$matches',
-      // If full URL is home_url("/") and this isn't a subdir install, return a slash for relative root
-      'if (isset($matches[0]) && $matches[0] === home_url("/") && str_replace("http://", "", home_url("/", "http"))==$_SERVER["HTTP_HOST"]) { return "/";' .
-      // If domain is equal to home_url("/"), then make URL relative
-      '} elseif (isset($matches[0]) && strpos($matches[0], home_url("/")) !== false) { return $matches[2];' .
-      // If domain is not equal to home_url("/"), do not make external link relative
-      '} else { return $matches[0]; };'
-    ),
-    $input
-  );
-  
-  // detect and correct for subdir installs
-  if($subdir = parse_url(home_url(), PHP_URL_PATH)) {
-  	if(substr($output, 0, strlen($subdir)) == (substr($output, strlen($subdir), strlen($subdir)))) {
-  		$output = substr($output, strlen($subdir));
-  	}
-  }
+  preg_match('|https?://([^/]+)(/.*)|i', $input, $matches);
 
-  return $output;
+  if (isset($matches[1]) && isset($matches[2]) && $matches[1] === $_SERVER['SERVER_NAME']) {
+    return wp_make_link_relative($input);
+  } else {
+    return $input;
+  }
 }
 
 function roots_enable_root_relative_urls() {
-  return !(is_admin() && in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php'))) && current_theme_supports('root-relative-urls');
+  return !(is_admin() || in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php'))) && current_theme_supports('root-relative-urls');
 }
 
 if (roots_enable_root_relative_urls()) {
   $root_rel_filters = array(
     'bloginfo_url',
-    'theme_root_uri',
-    'stylesheet_directory_uri',
-    'template_directory_uri',
-    'plugins_url',
     'the_permalink',
     'wp_list_pages',
     'wp_list_categories',
-    'wp_nav_menu',
+    'roots_wp_nav_menu_item',
     'the_content_more_link',
     'the_tags',
     'get_pagenum_link',
@@ -196,11 +182,13 @@ if (roots_enable_root_relative_urls()) {
     'year_link',
     'tag_link',
     'the_author_posts_link',
-  	'script_loader_src',
-  	'style_loader_src'
+    'script_loader_src',
+    'style_loader_src'
   );
+
   add_filters($root_rel_filters, 'roots_root_relative_url');
 }
+
 /**
  * Wrap embedded media as suggested by Readability
  *
@@ -210,7 +198,6 @@ if (roots_enable_root_relative_urls()) {
 function roots_embed_wrap($cache, $url, $attr = '', $post_ID = '') {
   return '<div class="entry-content-asset">' . $cache . '</div>';
 }
-
 add_filter('embed_oembed_html', 'roots_embed_wrap', 10, 4);
 add_filter('embed_googlevideo', 'roots_embed_wrap', 10, 2);
 
@@ -222,7 +209,6 @@ function roots_attachment_link_class($html) {
   $html = str_replace('<a', '<a class="thumbnail"', $html);
   return $html;
 }
-
 add_filter('wp_get_attachment_link', 'roots_attachment_link_class', 10, 1);
 
 /**
@@ -262,7 +248,6 @@ function roots_caption($output, $attr, $content) {
 
   return $output;
 }
-
 add_filter('img_caption_shortcode', 'roots_caption', 10, 3);
 
 /**
@@ -359,7 +344,6 @@ function roots_gallery($attr) {
 
   return $output;
 }
-
 if (current_theme_supports('bootstrap-gallery')) {
   remove_shortcode('gallery');
   add_shortcode('gallery', 'roots_gallery');
@@ -376,7 +360,6 @@ function roots_remove_dashboard_widgets() {
   remove_meta_box('dashboard_primary', 'dashboard', 'normal');
   remove_meta_box('dashboard_secondary', 'dashboard', 'normal');
 }
-
 add_action('admin_init', 'roots_remove_dashboard_widgets');
 
 /**
@@ -389,7 +372,6 @@ function roots_excerpt_length($length) {
 function roots_excerpt_more($more) {
   return ' &hellip; <a class="continued" href="' . get_permalink() . '">' . __('Continued', 'roots') . '</a>';
 }
-
 add_filter('excerpt_length', 'roots_excerpt_length');
 add_filter('excerpt_more', 'roots_excerpt_more');
 
@@ -399,7 +381,6 @@ add_filter('excerpt_more', 'roots_excerpt_more');
 function roots_remove_self_closing_tags($input) {
   return str_replace(' />', '>', $input);
 }
-
 add_filter('get_avatar',          'roots_remove_self_closing_tags'); // <img />
 add_filter('comment_id_fields',   'roots_remove_self_closing_tags'); // <input />
 add_filter('post_thumbnail_html', 'roots_remove_self_closing_tags'); // <img />
@@ -409,10 +390,8 @@ add_filter('post_thumbnail_html', 'roots_remove_self_closing_tags'); // <img />
  */
 function roots_remove_default_description($bloginfo) {
   $default_tagline = 'Just another WordPress site';
-
   return ($bloginfo === $default_tagline) ? '' : $bloginfo;
 }
-
 add_filter('get_bloginfo_rss', 'roots_remove_default_description');
 
 /**
@@ -429,7 +408,6 @@ function roots_change_mce_options($options) {
 
   return $options;
 }
-
 add_filter('tiny_mce_before_init', 'roots_change_mce_options');
 
 /**
@@ -469,7 +447,6 @@ function roots_widget_first_last_classes($params) {
 
   return $params;
 }
-
 add_filter('dynamic_sidebar_params', 'roots_widget_first_last_classes');
 
 /**
@@ -489,7 +466,6 @@ function roots_nice_search_redirect() {
     exit();
   }
 }
-
 if (current_theme_supports('nice-search')) {
   add_action('template_redirect', 'roots_nice_search_redirect');
 }
@@ -507,7 +483,6 @@ function roots_request_filter($query_vars) {
 
   return $query_vars;
 }
-
 add_filter('request', 'roots_request_filter');
 
 /**
@@ -518,5 +493,4 @@ function roots_get_search_form($argument) {
     locate_template('/templates/searchform.php', true, false);
   }
 }
-
 add_filter('get_search_form', 'roots_get_search_form');

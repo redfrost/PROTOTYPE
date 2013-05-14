@@ -5,16 +5,16 @@
 
 // RELATIVE URL
 
-//add_theme_support('root-relative-urls');    // Enable relative URLs
-//add_theme_support('rewrites');              // Enable URL rewrites
+add_theme_support('root-relative-urls');    // Enable relative URLs
+add_theme_support('rewrites');              // Enable URL rewrites
 
 
 
 // THEME FEATURES
 
-//add_theme_support('bootstrap-top-navbar');  // Enable Bootstrap's top navbar
+add_theme_support('bootstrap-top-navbar');  // Enable Bootstrap's top navbar
 add_theme_support('bootstrap-responsive'); // On/Off Responsive Mobile view
-add_theme_support('bootstrap-test'); // On/Off Test mode
+//add_theme_support('bootstrap-test'); // On/Off Test mode
 add_theme_support('header-searchform'); // Display search form in header
 //add_theme_support('postbox'); // Display list in box style (4 boxes)
 
@@ -27,12 +27,12 @@ add_theme_support('nice-search');           // Enable /?s= to /search/ redirect
 // CONFIGURATION
 
 define('WIDTH_VALUE', '960'); // RESPONSIVE LAYOUT MAX CONTENT WIDTH VALUE 
-define('STATIC_WIDTH_VALUE', '1050'); // STATIC LAYOUT MAX WIDTH VALUE FOR MOBILE (default = 1024)
+define('STATIC_WIDTH_VALUE', '1024'); // STATIC LAYOUT MAX WIDTH VALUE FOR MOBILE (default = 1024)
 define('JQUERY_VERSION', '1.8.3'); // Set jQuery CDN version
 define('GOOGLE_ANALYTICS_ID', ''); // UA-XXXXX-Y
 define('TYPEKIT_ID', 'wng7msj'); // ADOBE TYPEKIT ID
 define('POST_EXCERPT_LENGTH', 40);
-define('LAYOUT_STYLE', 4);
+define('LAYOUT_STYLE', 1);
 // CHOOSE LAYOUT STYLE: 
 // 1.DEFAULT 
 // 2.LEFT SIDEBAR 

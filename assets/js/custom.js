@@ -50,6 +50,16 @@ $("nav select").change(function()
 
 // Carousel	Auto
 		jQuery(document).ready(function() {
+			 $('#myCarousel-auto').carousel({
+				   interval: 8000,
+					  cycle: true
+			 });
+		});
+		var $ = jQuery.noConflict();
+
+
+// Carousel	Auto
+		jQuery(document).ready(function() {
 			 $('#myCarousel.slide').carousel({
 				   interval: 6000,
 					  cycle: true

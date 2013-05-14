@@ -295,16 +295,15 @@ h1.site-title { margin: 0 0 -5px 0; }
 
 
 
-/* Show sublevel on hover - Normal Menu */
+/* Show sublevel on hover - Normal Menu 
 .nav-hover-box ul.nav li.dropdown:hover > ul.dropdown-menu {
      display: block;
-} 
+} */
 
-/* Show sublevel on hover - Top menu */
+/* Show sublevel on hover - Top menu 
 .navbar ul.nav li.dropdown:hover > ul.dropdown-menu {
      display: block;
-} 
-/* When jQuery fade is handling this so disable now. */
+} */
 
 .nav-hover-box .dropdown-submenu > .dropdown-menu {
     margin-top: -7px;
@@ -314,11 +313,12 @@ h1.site-title { margin: 0 0 -5px 0; }
 
 
 
-/* Dropdown Indicator */
+/* Dropdown Indicator
 .nav-hover-box .dropdown > a {
     margin-right: 14px;
 }
-.nav-hover-box .dropdown > a:after {
+
+   .nav-hover-box .dropdown > a:after {
     border-top: 4px solid #888;
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
@@ -327,6 +327,7 @@ h1.site-title { margin: 0 0 -5px 0; }
     margin: 3px 0 0 8px;
     position: absolute;
 }
+managed by theme */ 
 
 
 .nav-tabs > li > a, .nav-pills > li > a {
@@ -446,7 +447,14 @@ h1.site-title { margin: 0 0 -5px 0; }
 .featured-image-box {  }
 .featured-image-box img { margin-bottom: 30px; }
 
+/* Featured banner */
+.featured-banner { margin-top: 30px; width: 100%; height: 400px; }
 
+/* Search */
+.header-standard #searchform {
+    float: right;
+    margin: -112px 0 20px;
+}
 
 
 

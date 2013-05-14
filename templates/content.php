@@ -25,9 +25,9 @@
 		  	<!-- <a class="btn btn-mini" href="<?php the_permalink(); ?>">&raquo; Read More</a> -->
 		  	</div>
 		</div>
-    <footer>
-      <?php the_tags('<ul class="entry-tags"><li>','</li><li>','</li></ul>'); ?>
-    </footer>
+  <footer>
+    <?php the_tags('<ul class="entry-tags"><li>','</li><li>','</li></ul>'); ?>
+  </footer>
 
   </article>
 <?php endwhile; ?>

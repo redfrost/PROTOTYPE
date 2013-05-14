@@ -1,24 +1,34 @@
 <?php
 
-/**
- * Enable theme features
- */
+// Enable theme features
+
+
+// RELATIVE URL
+
 //add_theme_support('root-relative-urls');    // Enable relative URLs
 //add_theme_support('rewrites');              // Enable URL rewrites
-//add_theme_support('h5bp-htaccess');         // Enable HTML5 Boilerplate's .htaccess
+
+
+
+// THEME FEATURES
+
 //add_theme_support('bootstrap-top-navbar');  // Enable Bootstrap's top navbar
-//add_theme_support('bootstrap-gallery');     // Enable Bootstrap's thumbnails component on [gallery]
-//add_theme_support('nice-search');           // Enable /?s= to /search/ redirect
 add_theme_support('bootstrap-responsive'); // On/Off Responsive Mobile view
 add_theme_support('bootstrap-test'); // On/Off Test mode
 add_theme_support('header-searchform'); // Display search form in header
 //add_theme_support('postbox'); // Display list in box style (4 boxes)
 
+add_theme_support('bootstrap-gallery');     // Enable Bootstrap's thumbnails component on [gallery]
+add_theme_support('nice-search');           // Enable /?s= to /search/ redirect
 
-/**
- * Configuration values
- */
-define('WIDTH_VALUE', '1170'); // RESPONSIVE LAYOUT MAX WIDTH VALUE 
+
+
+
+// CONFIGURATION
+
+define('WIDTH_VALUE', '1170'); // RESPONSIVE LAYOUT MAX CONTENT WIDTH VALUE 
+define('STATIC_WIDTH_VALUE', '1050'); // STATIC LAYOUT MAX WIDTH VALUE FOR MOBILE (default = 1024)
+define('JQUERY_VERSION', '1.8.3'); // Set jQuery CDN version
 define('GOOGLE_ANALYTICS_ID', ''); // UA-XXXXX-Y
 define('TYPEKIT_ID', 'wng7msj'); // ADOBE TYPEKIT ID
 define('POST_EXCERPT_LENGTH', 40);
@@ -31,9 +41,18 @@ define('LAYOUT_STYLE', 1);
 
 
 
-/**
- * .main classes
- */
+ 
+// Header Information
+define('SITE_DESC', 'Wordpress base template');  // Website description 
+define('SITE_AUTHOR', 'Redfrost');  // Site owner
+define('SITE_PUBLISHER', 'Massivesound');  // Site developer or publisher
+define('SITE_KEYWORDS', 'wordpress');  //Search keywords
+
+
+
+
+// main classes
+
 function roots_main_class() {
   if (roots_display_sidebar()) {
     // Classes on pages with the sidebar
@@ -54,9 +73,9 @@ function roots_sidebar_class() {
 }
 
 
-/**  
- * Responsive-Max Class change
- */
+
+// Responsive-Max Class change
+
 function roots_container_class() {
   if (current_theme_supports('bootstrap-responsive')) {
     $class = 'container-fluid';
@@ -75,11 +94,9 @@ function roots_row_class() {
 }
 
 
-/**
- * Define which pages shouldn't have the sidebar
- *
- * See lib/sidebar.php for more details
- */
+
+// Define which pages shouldn't have the sidebar
+
 function roots_display_sidebar() {
   $sidebar_config = new Roots_Sidebar(
     /**
@@ -104,8 +121,7 @@ function roots_display_sidebar() {
       'page-custom.php',
       'page-fullwidth.php',
       'page-featured.php',
-      'page-product.php',
-      'post-fullwidth.php'
+      'page-product.php'    
     )
   );
 
@@ -120,3 +136,8 @@ function roots_display_sidebar() {
  * Default: 940px is the default Bootstrap container width.
  */
 if (!isset($content_width)) { $content_width = 960; }
+
+
+
+
+

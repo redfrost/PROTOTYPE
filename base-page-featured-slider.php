@@ -2,22 +2,17 @@
 
 <!-- Featured banner on top -->
 <div class="<?php echo roots_container_class(); ?>">
-<?php get_template_part('templates/section', 'news-banner-slider'); ?>
-<?php get_template_part('templates/section', 'news-listbox-carousel'); ?>
-<?php get_template_part('templates/section', 'news-listbox2'); ?>
-<?php get_template_part('templates/section', 'news-listbox3'); ?>
-<?php get_template_part('templates/section', 'news-listbox4'); ?>
+    <?php get_template_part('template-sections', 'news-banner-slider'); ?>
+    <?php get_template_part('template-sections', 'news-listbox-carousel'); ?>
+    <?php get_template_part('template-sections', 'news-listbox2'); ?>
+    <?php get_template_part('template-sections', 'news-listbox3'); ?>
+    <?php get_template_part('template-sections', 'news-listbox4'); ?>
 </div>
 
 <div class="wrap <?php echo roots_container_class(); ?>" role="document">
 
     <!-- Breadcrumb -->
-    <div class="breadcrumbs">
-      <?php if(function_exists('bcn_display'))
-      {
-          bcn_display();
-      }?>
-    </div>
+    <div class="breadcrumbs"><?php if(function_exists('bcn_display')) { bcn_display(); }?></div>
 
     <!-- Parent Page Header -->
     <div class="page-header">
@@ -32,7 +27,7 @@
     </div>
       
     <!-- Content -->  
-    <?php get_template_part('templates/section-news-list'); ?>
+    <?php get_template_part('template-sections/news-list'); ?>
  
 </div><!-- /.wrap -->
 
