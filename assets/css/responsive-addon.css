@@ -57,7 +57,7 @@
 	@media (max-width: 979px) {
 		.header-standard #searchform {
 		    float: right;
-		    margin-top: -116px;
+		    margin: -90px 0 0 20px;
 		}
 		.sidebar #searchform #s { width: 50%; }
 	}
