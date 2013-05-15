@@ -447,7 +447,8 @@ managed by theme */
 .featured-image-box img { margin-bottom: 30px; }
 
 /* Featured banner */
-.featured-banner { margin-top: 30px; width: 100%; height: 400px; }
+.featured-banner { margin-top: 30px; width: 100%; height: 400px; background-size: cover; background-repeat: no-repeat; }
+
 
 /* Search */
 .header-standard #searchform {
