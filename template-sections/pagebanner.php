@@ -7,9 +7,15 @@ if ($videoID) {
 	// Echo the embed code via oEmbed
 	echo wp_oembed_get( '' . $videoID ); 
 	echo '</div>';
-}
-?>
+    }
 
+ // CUSTOM BANNER in Page-banner. Use [custom_banner] in custom field.
+if ( get_post_meta($post->ID, 'custom_banner', true) ) {
+	echo '<div class="custom_banner">';
+    echo do_shortcode(get_post_meta($post->ID, 'custom_banner', $single = true));
+    echo '</div>';
+    }
+?>
 
 <div class="featured-image-box">
 

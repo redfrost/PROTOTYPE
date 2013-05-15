@@ -379,6 +379,9 @@ managed by theme */
 .nav-pills > li > a { text-transform: uppercase; }
 
 
+/* Custom field banner */
+.custom_banner { margin-top: 24px; }
+
 
 /* Mobie Menu */
 .nav-main select { display: none; }
