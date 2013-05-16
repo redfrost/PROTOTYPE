@@ -12,17 +12,20 @@ function post_type_tags_fix($request) {
 add_filter('request', 'post_type_tags_fix');
 
 
-//New Sidebar
-if ( function_exists('register_sidebar') ) {
-register_sidebar(array(
-'name' => 'Secondary Sidebar',
-'id' => 'sidebar-secondary',
-'description' => 'Secondary sidebar in 3 Column layout.',
-    'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-inner">',
-    'after_widget'  => '</div></section>',
-    'before_title'  => '<h3>',
-    'after_title'   => '</h3>',
-));
+
+//THREE COLUMNS: New Sidebar
+switch(LAYOUT_STYLE) {
+    case "4": 
+    register_sidebar(array(
+    'name' => 'Secondary Sidebar',
+    'id' => 'sidebar-secondary',
+    'description' => 'Secondary sidebar in 3 Column layout.',
+        'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-inner">',
+        'after_widget'  => '</div></section>',
+        'before_title'  => '<h3>',
+        'after_title'   => '</h3>',
+    ));
+    break;
 }
 
 

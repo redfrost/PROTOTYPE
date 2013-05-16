@@ -121,7 +121,7 @@ function roots_display_sidebar() {
       'page-custom.php',
       'page-fullwidth.php',
       'page-featured.php',
-      'page-product.php',    
+      'page-product.php'  
     )
   );
 
