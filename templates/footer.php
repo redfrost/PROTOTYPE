@@ -26,7 +26,7 @@
 <?php wp_footer(); ?>
 
 
-</div><!-- /#master_wrap -->
+</div><!-- /#master-wrap -->
 
 <!-- iPad menu fix -->
 <script type='text/javascript'>

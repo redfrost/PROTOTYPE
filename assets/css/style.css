@@ -39,6 +39,7 @@ a:hover {
     filter: alpha(opacity=50); /* IE7 */
     opacity: 0.6;
 	}
+    .btn,.btn:hover { opacity:1; }
 
 	/* Remove Firefox selection dot */
 	a, a:focus, a:active, a:hover, object, embed { outline: none; }
@@ -69,6 +70,13 @@ img { max-width: 100%; height:auto; -ms-interpolation-mode: bicubic; }
 ::-moz-selection { background: #ff5e99; color: #FFFFFF; }
 
 
+/* Alignment */
+.aligncenter { display: block; margin: 0 auto; }
+.alignleft { float: left; }
+.alignright { float: right; }
+figure.alignnone { margin-left: 0; margin-right: 0; }
+
+
 /* Text Style */
 .text-left   { text-align: left; }
 .text-right  { text-align: right; }
@@ -78,6 +86,7 @@ img { max-width: 100%; height:auto; -ms-interpolation-mode: bicubic; }
 .highlight   { background: #ff0; }
 .grey  { color: #969696; }
 div { word-wrap:break-word;}
+
 
 /* Phot position */
 img.alignright { float: right; margin: 10px 0px 10px 20px; }
@@ -212,7 +221,7 @@ body {
 .carousel-control, 
 .fading,
 .blogroll li a,
-#menu-footer a { 
+.footer a { 
   -webkit-transition: all 200ms ease;
 	 -moz-transition: all 200ms ease;
 	  -ms-transition: all 200ms ease;
@@ -238,15 +247,13 @@ body {
 
 .banner { margin-top: 40px; }
 	
-	/* Fixed Topbar Navigation */
-	.banner.navbar-fixed-top { margin-top: 0px; }
-	body.top-navbar .wrap { margin-top: 80px; }
-	body.admin-bar .navbar-static-top { top: 28px; }
-
 h1.site-title { margin: 0 0 -5px 0; }
 
+.navbar .brand {
+    font-weight: bold;
+}
+
 .brand {
-    letter-spacing: -2px;
     color: #000000;         
     font-size: 3rem;
     font-weight: bolder;
@@ -277,9 +284,13 @@ h1.site-title { margin: 0 0 -5px 0; }
 ----------------------------------------- */
 
 /* Top fixed menu style */
+.banner.navbar-fixed-top { margin-top: 0px; }
+body.top-navbar #master-wrap { margin-top: 80px; }
+body.admin-bar .navbar-static-top { top: 28px; }
+	
 .navbar-fixed-top .nav { float: right; }
 .navbar-fixed-top .dropdown-menu { margin-top: 0px; }
-
+.navbar-width { margin: auto; }
 
 /* Standard Menu */
 .nav-main.nav-hover-box {
@@ -294,18 +305,12 @@ h1.site-title { margin: 0 0 -5px 0; }
 
 
 
-/* Show sublevel on hover - Normal Menu 
-.nav-hover-box ul.nav li.dropdown:hover > ul.dropdown-menu {
-     display: block;
-} */
-
-/* Show sublevel on hover - Top menu 
-.navbar ul.nav li.dropdown:hover > ul.dropdown-menu {
-     display: block;
-} */
-
+/* Sub-level ul offset */
 .nav-hover-box .dropdown-submenu > .dropdown-menu {
     margin-top: -7px;
+}
+.dropdown-menu, .navbar .dropdown-submenu > .dropdown-menu {
+    margin-top: -6px;
 }
 
  .nav-hover-box ul.nav li.dropdown:hover ul.dropdown-menu ul.dropdown-submenu  { display: none; }		

@@ -1,6 +1,9 @@
 <header class="banner navbar navbar-fixed-top" role="banner">
   <div class="navbar-inner">
     <div class="<?php echo roots_container_class(); ?>">
+
+    <div class="navbar-width" style="max-width:<?php echo WIDTH_VALUE; ?>px;">
+
       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -16,6 +19,8 @@
           endif;
         ?>
       </nav>
+    </div>
+
     </div>
   </div>
 </header>

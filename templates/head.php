@@ -34,7 +34,7 @@ When you look into an abyss, the abyss also looks into you.
 
 <!-- jQuery -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/<?php echo JQUERY_VERSION; ?>/jquery.min.js"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/vendor/jquery.js"></script>
+    <script>window.jQuery || document.write('<script src="<?php echo get_template_directory_uri(); ?>/assets/js/vendor/jquery .js"><\/script>')</script>
 
 
 <!-- Font -->
@@ -72,5 +72,19 @@ When you look into an abyss, the abyss also looks into you.
     }
   ?>
   
+  <!-- Menu Children animation -->
+  <?php 
+    if (current_theme_supports('nav-shy-child')) {
+    echo '<script type="text/javascript">';
+    echo "jQuery(document).ready(function(){ $(\".no-touch .nav-main li.dropdown\").hover( function() { $('ul', this).fadeIn(\"fast\"); }, function() { $('ul', this).fadeOut(\"fast\"); }); });\n"; 
+    echo '</script>';
+    } else {
+
+    echo '<style type="text/css">';
+    echo '.no-touch .nav-hover-box ul.nav li.dropdown:hover > ul.dropdown-menu { display: block; }
+          .no-touch .navbar ul.nav li.dropdown:hover > ul.dropdown-menu { display: block; }' ;
+    echo '</style>';
+    }
+  ?>  
   
-<div id="master_wrap">
+<div id="master-wrap">

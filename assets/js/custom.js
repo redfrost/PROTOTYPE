@@ -107,18 +107,7 @@ $("nav select").change(function()
        });
     });
 		
-		
 
-/*
-// Dropdown Menu Fade    
-jQuery(document).ready(function(){
-    $(".nav-hover-box li.dropdown").hover(
-         function() { $('ul', this).fadeIn("fast");
-        },
-        function() { $('ul', this).fadeOut("fast");
-    });
-});
-*/
 
 
 /*
