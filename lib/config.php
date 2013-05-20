@@ -13,20 +13,13 @@
 
 
 // THEME FEATURES
+//add_theme_support('bootstrap-top-navbar');  // Enable Bootstrap's top navbar
 add_theme_support('bootstrap-responsive'); // On/Off Responsive Mobile view
 add_theme_support('header-searchform'); // Display search form in header
 //add_theme_support('postbox'); // Display list in box style (4 boxes)
 add_theme_support('bootstrap-gallery');     // Enable Bootstrap's thumbnails component on [gallery]
 add_theme_support('nice-search');           // Enable /?s= to /search/ redirect
 add_theme_support('bootstrap-test'); // On/Off Test mode
-
-
-
-
-// NAVIGATION
-
-add_theme_support('bootstrap-top-navbar');  // Enable Bootstrap's top navbar
-add_theme_support('nav-shy-child'); // Enable fading navigation sub-menu
 
 
 

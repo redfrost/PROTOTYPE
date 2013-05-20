@@ -71,20 +71,6 @@ When you look into an abyss, the abyss also looks into you.
       get_template_part('templates/header');
     }
   ?>
-  
-  <!-- Menu Children animation -->
-  <?php 
-    if (current_theme_supports('nav-shy-child')) {
-    echo '<script type="text/javascript">';
-    echo "jQuery(document).ready(function(){ $(\".no-touch .nav-main li.dropdown\").hover( function() { $('ul', this).fadeIn(\"fast\"); }, function() { $('ul', this).fadeOut(\"fast\"); }); });\n"; 
-    echo '</script>';
-    } else {
 
-    echo '<style type="text/css">';
-    echo '.no-touch .nav-hover-box ul.nav li.dropdown:hover > ul.dropdown-menu { display: block; }
-          .no-touch .navbar ul.nav li.dropdown:hover > ul.dropdown-menu { display: block; }' ;
-    echo '</style>';
-    }
-  ?>  
   
 <div id="master-wrap">
