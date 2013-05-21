@@ -1,4 +1,5 @@
 <footer class="content-info footer" role="contentinfo">
+
 <div class="footer-menubar">
   <div class="<?php echo roots_container_class(); ?>">	 
     <?php dynamic_sidebar('sidebar-footer'); ?>
@@ -11,8 +12,10 @@
      <li class="copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></li>
      <li class="creator"><a href="#">Designed by Redfrost</a></li>
     </ul>
+    
     <!-- Scroll to top -->
 	<p class="back-top"><a href="#top"><span></span>Back to Top</a></p>
+
   </div>
 </div>
 
@@ -23,7 +26,7 @@
 <?php wp_footer(); ?>
 
 
-</div><!-- /#master_wrap -->
+</div><!-- /#master-wrap -->
 
 <!-- iPad menu fix -->
 <script type='text/javascript'>

@@ -1,16 +1,3 @@
-<?php
-// VIDEO in Page-banner. Use [video_url] in custom field.
-$videoID = get_post_meta($post->ID, 'video_url', true);
-// Check if there is in fact a video URL
-if ($videoID) {
-	echo '<div class="videoContainer">';
-	// Echo the embed code via oEmbed
-	echo wp_oembed_get( '' . $videoID ); 
-	echo '</div>';
-}
-?>
-
-
 <div class="featured-image-box">
 
 	<?php
@@ -37,6 +24,24 @@ if ($videoID) {
 
 </div>
 
+<?php
+// VIDEO in Page-banner. Use [video_url] in custom field.
+$videoID = get_post_meta($post->ID, 'video_url', true);
+// Check if there is in fact a video URL
+if ($videoID) {
+	echo '<div class="videoContainer">';
+	// Echo the embed code via oEmbed
+	echo wp_oembed_get( '' . $videoID ); 
+	echo '</div>';
+    }
+
+ // CUSTOM BANNER in Page-banner. Use [custom_banner] in custom field.
+if ( get_post_meta($post->ID, 'custom_banner', true) ) {
+	echo '<div class="custom_banner">';
+    echo do_shortcode(get_post_meta($post->ID, 'custom_banner', $single = true));
+    echo '</div>';
+    }
+?>
 
 
  

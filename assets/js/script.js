@@ -1,5 +1,5 @@
 /* ===================================================
- * bootstrap-transition.js v2.3.0
+ * bootstrap-transition.js v2.3.1
  * http://twitter.github.com/bootstrap/javascript.html#transitions
  * ===================================================
  * Copyright 2012 Twitter, Inc.
@@ -59,7 +59,7 @@
 
 }(window.jQuery);
 /* =========================================================
- * bootstrap-modal.js v2.3.0
+ * bootstrap-modal.js v2.3.1
  * http://twitter.github.com/bootstrap/javascript.html#modals
  * =========================================================
  * Copyright 2012 Twitter, Inc.
@@ -208,7 +208,7 @@
       }
 
     , removeBackdrop: function () {
-        this.$backdrop.remove()
+        this.$backdrop && this.$backdrop.remove()
         this.$backdrop = null
       }
 
@@ -307,7 +307,7 @@
 }(window.jQuery);
 
 /* ============================================================
- * bootstrap-dropdown.js v2.3.0
+ * bootstrap-dropdown.js v2.3.1
  * http://twitter.github.com/bootstrap/javascript.html#dropdowns
  * ============================================================
  * Copyright 2012 Twitter, Inc.
@@ -466,14 +466,14 @@
   $(document)
     .on('click.dropdown.data-api', clearMenus)
     .on('click.dropdown.data-api', '.dropdown form', function (e) { e.stopPropagation() })
-    .on('.dropdown-menu', function (e) { e.stopPropagation() })
+    .on('click.dropdown-menu', function (e) { e.stopPropagation() })
     .on('click.dropdown.data-api'  , toggle, Dropdown.prototype.toggle)
     .on('keydown.dropdown.data-api', toggle + ', [role=menu]' , Dropdown.prototype.keydown)
 
 }(window.jQuery);
 
 /* =============================================================
- * bootstrap-scrollspy.js v2.3.0
+ * bootstrap-scrollspy.js v2.3.1
  * http://twitter.github.com/bootstrap/javascript.html#scrollspy
  * =============================================================
  * Copyright 2012 Twitter, Inc.
@@ -635,7 +635,7 @@
 
 }(window.jQuery);
 /* ========================================================
- * bootstrap-tab.js v2.3.0
+ * bootstrap-tab.js v2.3.1
  * http://twitter.github.com/bootstrap/javascript.html#tabs
  * ========================================================
  * Copyright 2012 Twitter, Inc.
@@ -779,7 +779,7 @@
 
 }(window.jQuery);
 /* ===========================================================
- * bootstrap-tooltip.js v2.3.0
+ * bootstrap-tooltip.js v2.3.1
  * http://twitter.github.com/bootstrap/javascript.html#tooltips
  * Inspired by the original jQuery.tipsy by Jason Frame
  * ===========================================================
@@ -860,7 +860,15 @@
     }
 
   , enter: function (e) {
-      var self = $(e.currentTarget)[this.type](this._options).data(this.type)
+      var defaults = $.fn[this.type].defaults
+        , options = {}
+        , self
+
+      this._options && $.each(this._options, function (key, value) {
+        if (defaults[key] != value) options[key] = value
+      }, this)
+
+      self = $(e.currentTarget)[this.type](options).data(this.type)
 
       if (!self.options.delay || !self.options.delay.show) return self.show()
 
@@ -1133,7 +1141,7 @@
 }(window.jQuery);
 
 /* ===========================================================
- * bootstrap-popover.js v2.3.0
+ * bootstrap-popover.js v2.3.1
  * http://twitter.github.com/bootstrap/javascript.html#popovers
  * ===========================================================
  * Copyright 2012 Twitter, Inc.
@@ -1248,7 +1256,7 @@
 }(window.jQuery);
 
 /* ==========================================================
- * bootstrap-affix.js v2.3.0
+ * bootstrap-affix.js v2.3.1
  * http://twitter.github.com/bootstrap/javascript.html#affix
  * ==========================================================
  * Copyright 2012 Twitter, Inc.
@@ -1300,10 +1308,11 @@
     if (typeof offsetTop == 'function') offsetTop = offset.top()
     if (typeof offsetBottom == 'function') offsetBottom = offset.bottom()
 
-    affix = this.unpin != null && (scrollTop + this.unpin <= position.top) ?
-      false    : offsetBottom != null && (position.top + this.$element.height() >= scrollHeight - offsetBottom) ?
-      'bottom' : offsetTop != null && scrollTop <= offsetTop ?
-      'top'    : false
+var before_y_bool = (offsetTop != null && scrollTop < offsetTop)
+    , inside_y_bool = (scrollTop >= offsetTop && scrollTop <= scrollHeight-offsetBottom-this.$element.height()-(this.unpin != null ? this.unpin : 0) )
+    , before_offset_bottom_bool = (offsetBottom != null && (position.top + this.$element.height() <= scrollHeight - offsetBottom))
+
+affix = before_y_bool ? 'top' : (inside_y_bool && before_offset_bottom_bool) ? false : 'bottom'
 
     if (this.affixed === affix) return
 
@@ -1365,7 +1374,7 @@
 
 }(window.jQuery);
 /* ==========================================================
- * bootstrap-alert.js v2.3.0
+ * bootstrap-alert.js v2.3.1
  * http://twitter.github.com/bootstrap/javascript.html#alerts
  * ==========================================================
  * Copyright 2012 Twitter, Inc.
@@ -1464,7 +1473,7 @@
 
 }(window.jQuery);
 /* ============================================================
- * bootstrap-button.js v2.3.0
+ * bootstrap-button.js v2.3.1
  * http://twitter.github.com/bootstrap/javascript.html#buttons
  * ============================================================
  * Copyright 2012 Twitter, Inc.
@@ -1569,7 +1578,7 @@
 
 }(window.jQuery);
 /* =============================================================
- * bootstrap-collapse.js v2.3.0
+ * bootstrap-collapse.js v2.3.1
  * http://twitter.github.com/bootstrap/javascript.html#collapse
  * =============================================================
  * Copyright 2012 Twitter, Inc.
@@ -1736,7 +1745,7 @@
 
 }(window.jQuery);
 /* ==========================================================
- * bootstrap-carousel.js v2.3.0
+ * bootstrap-carousel.js v2.3.1
  * http://twitter.github.com/bootstrap/javascript.html#carousel
  * ==========================================================
  * Copyright 2012 Twitter, Inc.
@@ -1812,7 +1821,7 @@
       if (!e) this.paused = true
       if (this.$element.find('.next, .prev').length && $.support.transition.end) {
         this.$element.trigger($.support.transition.end)
-        this.cycle()
+        this.cycle(true)
       }
       clearInterval(this.interval)
       this.interval = null
@@ -1943,7 +1952,7 @@
 
 }(window.jQuery);
 /* =============================================================
- * bootstrap-typeahead.js v2.3.0
+ * bootstrap-typeahead.js v2.3.1
  * http://twitter.github.com/bootstrap/javascript.html#typeahead
  * =============================================================
  * Copyright 2012 Twitter, Inc.
