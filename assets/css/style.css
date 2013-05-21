@@ -512,7 +512,7 @@ footer section { padding-top: 0px; }
 
 /* Sidebar Global */
 .sidebar section { margin-bottom: 50px; margin-top: -8px; }
-.sidebar section, .threecolumn .sidebar1 section, .threecolumn .sidebar2 section { padding-top: 0px; }
+.sidebar section, .threecolumns .sidebar1 section, .threecolumns .sidebar2 section { padding-top: 0px; }
 
 .widget h3, h3.srp-widget-title {
     border-bottom: 1px dotted #CCCCCC;
@@ -1134,19 +1134,27 @@ iframe, object, embed { width: 100%; /* min-height: 427px; */ }
 .main.right,.sidebar.right { float: right !important; }
 .main.left,.sidebar.left { float: left !important; }
 
-.main.right {
-     border-left: 1px dotted #CCCCCC !important;
-     border-right: 0px none !important;
-     padding-left: 19px !important;
-    }
-
 .sidebar.left {
-     margin-left: 0px !important;
+     margin-left: 0px;
     }
     .sidebar.left section {
-         padding-left: 0px !important;
-         padding-right: 24px;
+         padding-left: 0px;
+        }
+
+@media (min-width: 980px) {
+.main.right {
+    border-left: 1px dotted #CCCCCC;
+    border-right: 0 none;
+    padding-left: 19px;
     }
+    .sidebar.left section { padding-right: 0px; }
+}
+
+
+
+
+
+
 
 /* Fullwidth fix */
 .main.right.span12 {
