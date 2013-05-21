@@ -1,5 +1,4 @@
 <?php
-
 class Roots_Nav_Walker extends Walker_Nav_Menu {
   function check_current($classes) {
     return preg_match('/(current[-_])|active|dropdown/', $classes);
@@ -15,24 +14,23 @@ class Roots_Nav_Walker extends Walker_Nav_Menu {
 
 // On-Off Main nav hover clickable
 if (current_theme_supports('bootstrap-top-navbar')) { 
-
     if ($item->is_dropdown && ($depth === 0)) {
       $item_html = str_replace('<a', '<a class="dropdown-toggle" data-toggle="dropdown" data-target="#"', $item_html);
       $item_html = str_replace('</a>', ' <b class="caret"></b></a>', $item_html);
     }
-    
-}        elseif (stristr($item_html, 'li class="divider')) {
+}    elseif (stristr($item_html, 'li class="divider')) {
       $item_html = preg_replace('/<a[^>]*>.*?<\/a>/iU', '', $item_html);    
     }
     elseif (stristr($item_html, 'li class="nav-header')) {
       $item_html = preg_replace('/<a[^>]*>(.*)<\/a>/iU', '$1', $item_html);
-    }   
+    }
 
+    $item_html = apply_filters('roots_wp_nav_menu_item', $item_html);
     $output .= $item_html;
   }
 
   function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output) {
-    $element->is_dropdown = !empty($children_elements[$element->ID]);
+    $element->is_dropdown = ((!empty($children_elements[$element->ID]) && (($depth + 1) < $max_depth || ($max_depth === 0))));
 
     if ($element->is_dropdown) {
       if ($depth === 0) {
@@ -61,7 +59,6 @@ function roots_nav_menu_css_class($classes, $item) {
 
   return array_filter($classes, 'is_element_empty');
 }
-
 add_filter('nav_menu_css_class', 'roots_nav_menu_css_class', 10, 2);
 add_filter('nav_menu_item_id', '__return_null');
 
@@ -88,7 +85,4 @@ function roots_nav_menu_args($args = '') {
 
   return array_merge($args, $roots_nav_menu_args);
 }
-
 add_filter('wp_nav_menu_args', 'roots_nav_menu_args');
-
-

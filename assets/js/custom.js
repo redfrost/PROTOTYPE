@@ -48,10 +48,20 @@ $("nav select").change(function()
 
 
 
-// Carousel	
+// Carousel	Auto
 		jQuery(document).ready(function() {
 			 $('#myCarousel-auto').carousel({
-				   interval: 5000,
+				   interval: 8000,
+					  cycle: true
+			 });
+		});
+		var $ = jQuery.noConflict();
+
+
+// Carousel	Auto
+		jQuery(document).ready(function() {
+			 $('#myCarousel.slide').carousel({
+				   interval: 6000,
 					  cycle: true
 			 });
 		});
@@ -80,7 +90,25 @@ $("nav select").change(function()
 		});
 
 
-/*
+//Convert Address tags into a map link
+	jQuery(document).ready(function () {
+        $('address').each(function () {
+            var link = "<a href='http://maps.apple.com/?q=" + encodeURIComponent( $(this).text() ) + "' target='_blank'>" + $(this).text() + "</a>";
+            $(this).html(link);
+        });
+    });
+
+
+//Convert Address into an embedded map
+    jQuery(document).ready(function(){
+      $(".mapaddress").each(function(){                        
+        var embed ="<iframe width='425' height='350' frameborder='0' scrolling='no'  marginheight='0' marginwidth='0'   src='https://maps.google.com/maps?&amp;q="+ encodeURIComponent( $(this).text() ) +"&amp;output=embed'></iframe>";
+          $(this).html(embed);                               
+       });
+    });
+		
+
+
 // Dropdown Menu Fade    
 jQuery(document).ready(function(){
     $(".nav-hover-box li.dropdown").hover(
@@ -89,10 +117,10 @@ jQuery(document).ready(function(){
         function() { $('ul', this).fadeOut("fast");
     });
 });
-*/
 
 
 
+/*
 //Fixed Submenu
 	jQuery(document).scroll(function(){
 		// If has not activated (has no attribute "data-top"
@@ -109,4 +137,4 @@ jQuery(document).ready(function(){
 		else
 			$('.subnav').removeClass('subnav-fixed');
 	});
-
+*/

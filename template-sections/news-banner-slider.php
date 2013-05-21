@@ -1,6 +1,16 @@
 <div class="banner-slider <?php echo roots_row_class(); ?>">
 <div class="span12">
 <div id="myCarousel-auto" class="carousel carousel-fade slide page_banner_imgbox">
+
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel-auto" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel-auto" data-slide-to="1"></li>
+            <li data-target="#myCarousel-auto" data-slide-to="2"></li>
+            <li data-target="#myCarousel-auto" data-slide-to="3"></li>
+            <li data-target="#myCarousel-auto" data-slide-to="4"></li>
+        </ol>
+
  <div class="carousel-inner">
  
   <?php 
@@ -36,7 +46,7 @@
   <?php 
    $the_query = new WP_Query(array(
     'category_name' => 'news', 
-    'posts_per_page' => 5, 
+    'posts_per_page' => 4, 
     'offset' => 1 
     )); 
    while ( $the_query->have_posts() ) : 
@@ -66,8 +76,10 @@
   ?>
   
  </div><!-- carousel-inner -->
- <a class="left carousel-control" href="#myCarousel-auto" data-slide="prev">‹</a>
- <a class="right carousel-control" href="#myCarousel-auto" data-slide="next">›</a>
+        <div class="control-box">       
+            <a class="left carousel-control" href="#myCarousel-auto" data-slide="prev"><i class="icon-chevron-left"></i></a>
+            <a class="right carousel-control" href="#myCarousel-auto" data-slide="next"><i class="icon-chevron-right"></i></a>        
+        </div><!-- /.control-box -->   
   
  
 </div><!-- #myCarousel -->
