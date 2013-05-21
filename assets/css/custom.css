@@ -80,9 +80,21 @@ body {
 .carousel-box .caption p { display: none; }
                     
                     
-                    
-                    
-                    
+/* Mailchimp Newsletter field */                    
+.widget #mc_embed_signup form {
+     display: block;
+     padding: 10px 0px !important;
+     position: relative;
+     text-align: left;
+    }
+    #mc_embed_signup input.email {
+        display: block;
+        margin: 0 4% 10px 0;
+        min-width: 100% !important;
+        padding: 8px 0;
+        text-indent: 5px;
+        width: 58%;
+    }
                     
                     
                     
