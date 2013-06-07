@@ -14,7 +14,7 @@
     </ul>
     
     <!-- Scroll to top -->
-	<p class="back-top"><a href="#top"><span></span>Back to Top</a></p>
+	<p class="back-top"><a href="#body"><span></span>Back to Top</a></p>
 
   </div>
 </div>

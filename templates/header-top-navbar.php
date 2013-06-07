@@ -9,9 +9,25 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" href="<?php echo home_url(); ?>/">
-        <?php bloginfo('name'); ?>
-      </a>
+
+      
+       <!-- Logo Image -->
+    <?php if (current_theme_supports('custom_logo')) { ?>   
+    
+    	<img alt="<?php bloginfo('name'); ?>" src="<?php echo LOGO_PATH; ?>" style="max-width:<?php echo LOGO_WIDTH; ?>px;">
+    	<img alt="<?php bloginfo('name'); ?>" src="<?php echo LOGO_PATH; ?>">
+    	</a>
+        
+    <? } else { ?>
+
+        <!-- Logo Image -->
+        <a class="brand" href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a>
+
+    <?php } ?>   
+      
+      
+      
+      
       <nav class="nav-main nav-collapse collapse" role="navigation">
         <?php
           if (has_nav_menu('primary_navigation')) :

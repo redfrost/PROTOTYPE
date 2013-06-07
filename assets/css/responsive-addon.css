@@ -39,7 +39,7 @@
 		.nav-hover { display:none; }
 		.nav-main.nav-hover-box select {
 		    display: block;
-		    margin: 34px auto auto;
+		    margin: 0px auto auto;
 		}
 		.nav-main.nav-hover-box {
     	    border-bottom: 1px solid #EEEEEE;
@@ -70,7 +70,7 @@
 	@media (max-width: 767px) {
 		.header-standard #searchform {
 		    float: none !important;
-		    margin: -64px auto auto !important;
+		    margin: -60px auto 30px !important;
 		    text-align: center;
 		}
 	}
@@ -79,8 +79,8 @@
 
 /* CONTENT */
 @media (max-width: 767px) {
-    	.nav-single { margin-top: 40px; }
-	}  
+    .nav-single { margin-top: 40px; }
+}
 
 
 
@@ -109,18 +109,6 @@
 		    text-align: center;
 		    text-transform: uppercase;
 		}
-			
-	}
-
-	@media (max-width: 767px){	  
-		#menu-footer li {
-		    display: block !important;
-		    font-size: 0.88rem;
-		    line-height: 34px !important;
-		    list-style: none outside none;
-		    }
-		.footer .widget_nav_menu li { padding-right: 0; }
-		#menu-footer li, .blogroll li { margin: 0; }
 		.copyright {
     		display: block !important;
     		margin-top: 20px;
@@ -134,16 +122,25 @@
 			width: 100%;
 			border-left: 0px !important;
 			padding-left: 0px !important;
-			}		
-		.footer .widget_nav_menu li {
-            padding-right: 0 !important;
-            }
-	}
+			}			
+	    }
+
+	@media (max-width: 767px){	  
+		#menu-footer li {
+		    display: block !important;
+		    font-size: 0.88rem;
+		    line-height: 34px !important;
+		    list-style: none outside none;
+		    }
+		    #menu-footer li, .blogroll li { margin: 0; }
+		
+		.footer .widget_nav_menu li { padding-right: 0 !important; }
+	    }
 
 
 
 /* Scroll to Top Button */
-	@media (max-width: 767px) {
+	@media (max-width: 979px) {
 		.back-top {
 			width: 100%;
 	        text-align: center;	 
@@ -182,15 +179,18 @@
 
 /* SNS Links */
 	@media (max-width: 979px) {
-			.widget_links {
+		.widget_links, .sns_link {
 		    float: none !important;
 		    height: 30px;
-		    margin: auto !important;
+		    margin: 0 auto 20px !important;
 		    position: relative;
 		    text-align: center;
-		}
-	}		
-
+		    }
+	        .sns_link li:first-child, ul.xoxo {
+                padding-left: 0px;
+                margin-left: 0px;
+                }		
+	    }		
 
 
 /* Banner */

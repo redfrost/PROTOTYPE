@@ -3,18 +3,12 @@
 // Enable theme features
 
 
-
 // RELATIVE URL
-
 //add_theme_support('root-relative-urls');    // Enable relative URLs
 //add_theme_support('rewrites');              // Enable URL rewrites
 
 
-
-
-
 // THEME FEATURES
-
 //add_theme_support('bootstrap-top-navbar');  // Enable Bootstrap's top navbar
 add_theme_support('bootstrap-responsive'); // On/Off Responsive Mobile view
 add_theme_support('header-searchform'); // Display search form in header
@@ -22,9 +16,6 @@ add_theme_support('header-searchform'); // Display search form in header
 add_theme_support('bootstrap-gallery');     // Enable Bootstrap's thumbnails component on [gallery]
 add_theme_support('nice-search');           // Enable /?s= to /search/ redirect
 add_theme_support('bootstrap-test'); // On/Off Test mode
-
-
-
 
 
 // CONFIGURATION
@@ -43,22 +34,20 @@ define('LAYOUT_STYLE', 1);
 // 4.THREE COLUMNS
 
 
-
-
- 
-// Header Information
-
+// SITE INFORMATION
 define('SITE_DESC', 'Wordpress base template');  // Website description 
 define('SITE_AUTHOR', 'Redfrost');  // Site owner
 define('SITE_PUBLISHER', 'Massivesound');  // Site developer or publisher
 define('SITE_KEYWORDS', 'wordpress');  //Search keywords
 
 
-
+// CUSTOM LOGO
+//add_theme_support('custom_logo');  // Add a custom image logo
+define('LOGO_PATH', '#');  // Set image URL
+define('LOGO_WIDTH', '300'); // Set 1/2 size of image width for Retina display
 
 
 // main classes
-
 function roots_main_class() {
   if (roots_display_sidebar()) {
     // Classes on pages with the sidebar
@@ -77,9 +66,6 @@ function roots_main_class() {
 function roots_sidebar_class() {
   return 'span4';
 }
-
-
-
 
 
 // Responsive-Max Class change
@@ -103,10 +89,7 @@ function roots_row_class() {
 
 
 
-
-
 // Define which pages shouldn't have the sidebar
-
 function roots_display_sidebar() {
   $sidebar_config = new Roots_Sidebar(
     
@@ -118,15 +101,15 @@ function roots_display_sidebar() {
     
   //Page template checks (via is_page_template())
     array(
-      'page-custom.php',
-      'page-fullwidth.php',
-      'page-featured.php',
-      'page-product.php',
-      'page-landing.php'
+      'template-custom.php',
+      'template-fullwidth.php',
+      'template-featured.php',
+      'template-product.php',
+      'template-landing.php'
     )
   );
 
-  return $sidebar_config->display;
+  return apply_filters('roots_display_sidebar', $sidebar_config->display);
 }
 
 
