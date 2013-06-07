@@ -44,15 +44,18 @@ When you look into an abyss, the abyss also looks into you.
 
     <?php wp_head(); ?>
     <link rel="alternate" type="application/rss+xml" title="<?php echo get_bloginfo('name'); ?> Feed" href="<?php echo home_url(); ?>/feed/">
+
+    <?php if (current_theme_supports('bootstrap-responsive')) { ?>   
+    <!-- Responsive layout width -->
+    <style type="text/css"> .container-fluid { margin: auto; max-width: <?php echo WIDTH_VALUE; ?>px; } </style>   
+    <?php } ?>
+
 </head>
 
 
 <!-- Body starts -->
-<?php if (current_theme_supports('bootstrap-responsive')) { ?>   
-<body <?php body_class(); ?> style="max-width:<?php echo WIDTH_VALUE; ?>px;" data-spy="">
-<? } else { ?>
 <body <?php body_class(); ?> data-spy="">
-<?php } ?>
+
 
   <!-- Browser Warning -->  
   <!--[if lt IE 7]><div class="alert">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</div><![endif]-->

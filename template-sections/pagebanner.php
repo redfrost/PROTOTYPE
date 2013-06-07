@@ -1,3 +1,7 @@
+<!-- Breadcrumb -->
+<div class="breadcrumbs"><?php if(function_exists('bcn_display')) { bcn_display(); }?></div>
+
+<div class="page-banner <?php echo roots_container_class(); ?>">
 <div class="featured-image-box">
 
 	<?php
@@ -37,11 +41,11 @@ if ($videoID) {
 
  // CUSTOM BANNER in Page-banner. Use [custom_banner] in custom field.
 if ( get_post_meta($post->ID, 'custom_banner', true) ) {
-	echo '<div class="custom_banner">';
+	echo '<div class="custom-banner">';
     echo do_shortcode(get_post_meta($post->ID, 'custom_banner', $single = true));
     echo '</div>';
     }
 ?>
 
-
+</div>
  
